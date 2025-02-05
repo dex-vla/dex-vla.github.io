@@ -1,24 +1,20 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+// import './index.css';
+import ASCIIText from './reactbits/ASCIIText/ASCIIText';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="flex justify-center min-h-screen">
+      <div className='relative bg-red-500 bg-opacity-80 flex items-center justify-center' style={{ width: '80rem', height: '20rem' }}>
+        <ASCIIText
+          text='Dex VLA'
+          enableWaves={false}
+          asciiFontSize={8}
+          textFontSize={800}
+        />
+      </div>
     </div>
   );
 }
