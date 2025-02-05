@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/dex-vla/static/css/main.52b1044f.css",
-    "main.js": "/dex-vla/static/js/main.bcf4cc7d.js",
-    "static/js/453.f4cd8ba8.chunk.js": "/dex-vla/static/js/453.f4cd8ba8.chunk.js",
-    "index.html": "/dex-vla/index.html",
-    "main.52b1044f.css.map": "/dex-vla/static/css/main.52b1044f.css.map",
-    "main.bcf4cc7d.js.map": "/dex-vla/static/js/main.bcf4cc7d.js.map",
-    "453.f4cd8ba8.chunk.js.map": "/dex-vla/static/js/453.f4cd8ba8.chunk.js.map"
+    "main.css": "/static/css/main.52b1044f.css",
+    "main.js": "/static/js/main.9f36b63d.js",
+    "static/js/453.f4cd8ba8.chunk.js": "/static/js/453.f4cd8ba8.chunk.js",
+    "index.html": "/index.html",
+    "main.52b1044f.css.map": "/static/css/main.52b1044f.css.map",
+    "main.9f36b63d.js.map": "/static/js/main.9f36b63d.js.map",
+    "453.f4cd8ba8.chunk.js.map": "/static/js/453.f4cd8ba8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.52b1044f.css",
-    "static/js/main.bcf4cc7d.js"
+    "static/js/main.9f36b63d.js"
   ]
 }
