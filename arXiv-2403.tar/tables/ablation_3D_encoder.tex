@@ -1,0 +1,38 @@
+\begin{table}[htbp]
+\centering
+% \vspace{-0.1in}
+\caption{\textbf{Ablation on point cloud encoders.} We replace DP3 Encoder with other widely used encoders, including PointNet~\citep{qi2017pointnet}, PointNet++~\citep{qi2017pointnet++}, PointNeXt~\citep{qian2022pointnext}, and Point Transformer~\citep{zhao2021point_transformer}. We also include the pre-trained encoders.}
+\label{table: different 3D encoder}
+\vspace{-0.05in}
+\resizebox{0.49\textwidth}{!}{%
+\begin{tabular}{l|cccccc|ccc}
+\toprule
+
+
+
+  Encoders & H & D  & P & A & DA & SP & \textbf{Average} \\
+
+
+\midrule
+
+
+\textbf{DP3 Encoder} & \ddbf{100}{0} & \ddbf{62}{4} & \ddbf{43}{6} & \ddbf{99}{1} & \ddbf{69}{4} & \ddbf{97}{4} & \ccbf{78.3} \\
+
+
+PointNet & \dd{46}{8} & \dd{34}{8} & \dd{14}{4} & \dd{0}{0}& \dd{0}{0}& \dd{0}{0} &  $15.7$\\
+
+PointNet++ & \dd{0}{0} & \dd{0}{0} & \dd{13}{3} & \dd{0}{0} & \dd{0}{0}& \dd{0}{0} & $2.2$ \\
+
+PointNeXt & \dd{0}{0} & \dd{0}{0} & \dd{14}{3} & \dd{0}{0} & \dd{0}{0}& \dd{0}{0}  & $2.3$\\
+
+Point Transformer & \dd{0}{0} & \dd{0}{0} & \dd{6}{5}& \dd{0}{0}& \dd{0}{0}& \dd{0}{0} & $1.0$ \\
+
+PointNet++ (pre-trained) & \dd{5}{9} & \dd{19}{12} & \dd{17}{6}  & \dd{0}{0} & \dd{0}{0} & \dd{0}{0} & $6.8$ \\
+
+PointNeXt (pre-trained) & \dd{0}{0} & \dd{36}{13} & \dd{17}{6} & \dd{0}{0} &\dd{0}{0}  &\dd{0}{0} & $8.8$\\
+
+\bottomrule
+\end{tabular}}
+\vspace{-0.1in}
+\end{table}
+

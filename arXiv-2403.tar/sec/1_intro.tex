@@ -1,0 +1,63 @@
+\section{Introduction}
+
+
+Imitation learning provides an efficient way to teach robots a wide range of motor skills, such as grasping~\citep{wang2023mimicplay,shridhar2023peract,ze2023gnfactor}, legged locomotion~\cite{peng2020imitating_animal}, dexterous manipulation~\citep{agarwal2023functional,haldar2023fish}, humanoid loco-manipulation~\citep{seo2023humanoid}, and mobile manipulation~\citep{shafiullah2023bringing,fu2024mobile}. Visual imitation learning, which takes high-dimensional visual observations such as images or depth maps, eases the need for task-specific state estimation and thus gains the popularity~\citep{chi2023diffusion_policy,shridhar2023peract,ze2023gnfactor,florence2022ibc,hansen2022lfs}. 
+
+
+However, the generality of visual imitation learning comes at a cost of vast demonstrations~\citep{haldar2023fish,chi2023diffusion_policy,florence2022ibc}.
+For example, the state-of-the-art method Diffusion Policy~\citep{chi2023diffusion_policy} necessitates 100 to 200 human-collected demonstrations for each real-world task. To collect the required extensive number of demonstrations, the entire data-gathering process can span several days due to its long-horizon nature and failure-prone process. 
+One solution is online learning~\citep{haldar2023fish}, where the policy continues to evolve through interaction with environments and a learned reward function from expert demonstrations. Nevertheless, online learning in real-world scenarios introduces its own challenges, such as safety considerations, the necessity for automatic resetting, human intervention, and additional robot hardware costs. Therefore, how to enable (offline) imitation learning algorithms to learn robust and generalizable skills with as few demonstrations as possible is a fundamental problem, especially for practical real-world robot learning.
+
+
+% In this work, we point out that one missing point in previous diffusion policies~\citep{chi2023diffusion_policy,wang2022diffusion_QL,pearce2023imitating_diffusion} is the lack of usage of powerful 3D modality. To this end, we propose \textbf{\oursfull}, a new visuomotor imitation learning algorithm that brings the power of 3D visual representations into diffusion policies, such that both the 3D spatial understanding ability and the expressiveness of diffusion policies are fully utilized. \ours encodes the sparsely sampled point clouds into a compact 3D representation, with a simple and lightweight MLP encoder. Then \ours denoises the random noise into the action sequence conditioning on this compact 3D representation and robot poses. 
+
+% In this work, we identify a critical yet missing factor in prior diffusion policy frameworks~\citep{chi2023diffusion_policy,wang2022diffusion_QL,pearce2023imitating_diffusion}, specifically their omission of the potent 3D modality. \textcolor{red}{Shall we use the tone like it's simple and effective. We find 3D can enhance DP a lot. Is 3D pcd really a missing factor?}
+
+
+To tackle this challenging problem,  we introduce \textbf{\oursfull}, a  simple yet effective visual imitation learning algorithm that integrates the strengths of 3D visual representations with diffusion policies. \ours encodes sparsely sampled point clouds into a compact 3D representation using a straightforward and efficient MLP encoder. Subsequently, \ours denoises random noise into a coherent action sequence, conditioned on this compact 3D representation and the robot poses. This integration leverages not only the spatial understanding capabilities inherent in 3D modalities but also the expressiveness of diffusion models.
+
+
+To comprehensively evaluate \ours, we have developed a simulation benchmark comprising 72 diverse robotic tasks from 7 domains, alongside \revise{4 real-world tasks including challenging dexterous manipulation on deformable objects.} Our extensive experiments demonstrate that although \ours is conceptually straightforward, it exhibits several notable advantages over 2D-based diffusion policies and other baselines:
+
+\begin{enumerate}
+\item \textbf{Efficiency \& Effectiveness.} \ours not only achieves superior accuracy but also does so with significantly fewer demonstrations and fewer training steps.
+\item \textbf{Generalizability.} The 3D nature of \ours facilitates generalization capabilities across multiple aspects: space, viewpoint, instance, and appearance. 
+\item \revise{\textbf{Safe deployment.} 
+An interesting observation in our real-world experiments is that DP3 seldom gives erratic commands in real-world tasks, unlike baseline methods which often do} and exhibit unexpected behaviors, posing potential damage to the robot hardware.
+% DP3 consistently adheres to all safety requirements in real-world tasks, unlike baseline methods which often give erratic commands and exhibit unexpected behaviors, posing potential damage to the robot hardware.
+\end{enumerate}
+
+
+We conduct several analyses of our 3D visual representations. Intriguingly, we observed that while other baseline methods, such as BCRNN~\citep{mandlekar2021robomimic} and IBC~\citep{florence2022ibc}, benefit from the incorporation of 3D representations, they do not achieve enhancements comparable to \ours. Additionally, \ours consistently outperforms other 3D modalities, including depth and voxel representations, and surpasses other point encoders like PointNeXt~\citep{qian2022pointnext} and Point Transformer~\citep{zhao2021point_transformer}. These ablation studies highlight that the success of \ours is not just due to the usage of 3D visual representations, but also because of its careful design.
+
+\revise{In summary, our contributions are four-fold:
+\begin{enumerate}
+    \item We propose 3D Diffusion Policy (DP3), an effective visuomotor policy that generalizes across diverse aspects with few demonstrations.
+    \item To reduce the variance brought by benchmarks and tasks, we evaluate DP3 in a broad range of simulated and real-world tasks, showing the universality of DP3.
+    \item We conduct comprehensive analyses on visual representations in DP3 and show that a simple point cloud representation is preferred over other intricate 3D representations and is better suited for diffusion policies over other policy backbones.
+    \item DP3 is able to perform real-world deformable object manipulation using a dexterous hand with only 40 demonstrations, demonstrating that complex high-dimensional tasks could be handled with little human data.
+\end{enumerate}
+}
+
+\ours emphasizes the power of marrying 3D representations with diffusion policies in real-world robot learning. Code is available on \url{https://github.com/YanjieZe/3D-Diffusion-Policy}.
+
+% We start by analyzing the current imitation learning approaches in the case of limited demonstrations. We use a simple robotic manipulation task from MetaWorld~\citep{yu2020metaworld}, Reach, as a motivating example. In this task, the robot needs to reach the target point lying in 3D space with its end effector. We use only 5 demonstrations for training and evaluate 1000 times with randomized targets. We observe that current approaches, including Diffusion Policy~\citep{chi2023diffusion_policy}, could not fully cover their training points, as shown in Figure~\ref{fig:motivation example}. We assume that the bottleneck here is the lack of 3D understanding, since the manipulation is happening in 3D space while these approaches only receive 2D images as input. Therefore,  finding an optimal 3D visual representation for visuomotor control that could bring the 3D understanding to these imitation learning approaches is the key problem.
+
+
+
+
+% In this paper, we introduce \textbf{\oursfull}, which marries an optimal 3D visual representation with Diffusion Policy~\citep{chi2023diffusion_policy} and achieves strong few-shot learning and generalization ability across a wide range of simulation and real-world tasks, with a higher inference speed than Diffusion Policy. As shown in Figure~\ref{fig:motivation example}, \ours could generalize in 3D space given only 5 demonstrations.
+
+
+% The key factor of \ours is that we properly design a compact 3D visual representation encoded from point clouds with a simple lightweight MLP network. We term our 3D visual representation \textbf{\ourencoder}. There are mainly three key observations in our study of visual representations: \textit{(a)} point clouds are more effective compared to depth-based representations and voxel-based representations; \textit{(b)} \ourencoder is much more effective than more complex network architectures, such as PointNet++\citep{qi2017pointnet++}, PointNeXt~\citep{qian2022pointnext}, and Point Transformer~\citep{zhao2021point_transformer}; \textit{(c)} the 3D visual representations for visuomotor control should be compact.
+
+
+% We evaluate \ours across a total of \textbf{72} simulated robotic tasks from 7 domains, spanning a wide range of skills and objects. We also show the real world learning ability of \ours on 6 real-world dexterous manipulation tasks with an Allegro Hand.
+
+
+
+
+
+
+
+

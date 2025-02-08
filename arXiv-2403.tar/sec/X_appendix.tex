@@ -1,0 +1,120 @@
+\clearpage
+\newpage
+\onecolumn
+\begin{appendix}
+\subsection{Implementation Details}
+\ours mainly consists of two parts: perception and decision. We now detail the implementation details of each part as follows. The official implementation of DP3 is available on \url{https://github.com/YanjieZe/3D-Diffusion-Policy}.
+
+\noindent\textbf{Perception.} The input of \ours includes the visual observation and the robot pose. The visual observation is a point cloud without colors, downsampled from the raw point cloud using Farthest Point Sampling (FPS). We use 512 or 1024 in all the simulated and real-world tasks. DP3 encodes the point cloud into a compact representation with our designed DP3 Encoder. We provide a simple PyTorch implementation of our DP3 Encoder as follows:
+\begin{lstlisting}[language=Python, frame=none, basicstyle=\small\ttfamily, commentstyle=\color{ourblue}\small\ttfamily,columns=fullflexible, breaklines=true, postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space}, escapeinside={(*}{*)}]
+class DP3Encoder(nn.Module):
+    def __init__(self, channels=3):
+        # We only use xyz (channels=3) in this work
+        # while our encoder also works for xyzrgb (channels=6) in our experiments
+        self.mlp = nn.Sequential(
+                nn.Linear(channels, 64), nn.LayerNorm(64), nn.ReLU(),
+                nn.Linear(64, 128), nn.LayerNorm(128), nn.ReLU(),
+                nn.Linear(128, 256), nn.LayerNorm(256), nn.ReLU())
+        self.projection = nn.Sequential(nn.Linear(256, 64), nn.LayerNorm(64))
+    
+    def forward(self, x):
+        # x: B, N, 3
+        x = self.mlp(x) # B, N, 256
+        x = torch.max(x, 1)[0] # B, 256
+        x = self.projection(x) # B, 64
+        return x
+\end{lstlisting}
+The robot poses are also processed by an MLP network described as follows:
+\begin{lstlisting}[language=Python, frame=none, basicstyle=\small\ttfamily, commentstyle=\color{ourblue}\small\ttfamily,columns=fullflexible, breaklines=true, postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space}, escapeinside={(*}{*)}]
+# DimRobo is the dimension of the robot poses.
+Sequential(
+  (0): Linear(in_features=DimRobo, out_features=64, bias=True)
+  (1): ReLU()
+  (2): Linear(in_features=64, out_features=64, bias=True))
+\end{lstlisting}
+The representations encoded from point clouds and robot poses are concatenated into one representation of dimension 128.  Afterward, the decision backbone generates actions conditioning on this representation.
+
+\noindent\textbf{Decision.} The decision backbone is a convolutional network-based diffusion policy, which transforms random Gaussian noise into a coherent sequence of actions. For implementation, we utilize the official PyTorch framework available from \citep{chi2023diffusion_policy}. In practice, the model is designed to predict a series of $H$ actions based on $N_{obs}$ observed timesteps, but it will only execute the last $N_{act}$ actions during inference. We set $H=4, N_{obs}=2, N_{act}=3$ for \ours and diffusion-based baselines.
+
+
+The original Diffusion Policy typically employs a longer horizon, primarily due to the denser nature of the timesteps in their tasks.  In Table~\ref{table:prediction horizon}, we show that there is no significant difference between a short horizon and a long horizon for our tasks. Moreover, considering the potential for sudden disruptions in real-world robotic operations, we choose to employ a shorter horizon.
+
+\noindent\textbf{Normalization.} We scale the min and max of each action dimension and each observation dimension to $[-1, 1]$ independently. Normalizing the actions to $[-1,1]$ is a must for the prediction of DDPM and DDIM since they would clip the prediction to $[-1,1]$ for stability. 
+
+\subsection{Task Suite}
+
+\noindent\textbf{Simulated tasks.} We collect diverse simulated tasks to systematically evaluate imitation learning algorithms. Our collected tasks mainly focus on robotic manipulation, including   Adroit~\citep{rajeswaran2017dapg}, Bi-DexHands~\citep{chen2022bidexhands}, DexArt~\citep{bao2023dexart}, DexDeform~\citep{li2023dexdeform}, DexMV~\citep{qin2022dexmv}, HORA~\citep{qi2023hora}, and MetaWorld~\citep{yu2020metaworld}. The full task names could be seen in Table~\ref{table: simulation results}. We add the support for 3D modality in these tasks when the 3D modality is not available originally. 
+
+% \input{tables/tasks}
+
+
+
+
+\noindent\textbf{Real-world tasks.} The episode length for our real-world tasks is not fixed. Average episode lengths for demonstrations of each task are listed as follows: (1) 79.9 for Roll-Up; (2) 113.5 for Dumpling; (3) 71.4 for Drill; and (4) 83.6 for Pour. During the evaluation of the policy, we stop the robot when we find (1) the policy finishes the task; (2) the policy can not successfully handle the task; and (3) the policy makes behaviors that are harmful to the hardware. Our real-world setup and everyday objects used in our tasks are shown in Figure~\ref{fig:real world setup}. The randomization in each task is shown in Figure~\ref{fig:real task randomness}. For Roll-Up and Dumpling, the plasticine's shape and the appearance of the objects placed upon the plasticine are randomized. For Drill and Pour, the variations come from the random positions of the cube, drill, and bowl. 
+
+
+
+\subsection{More Simulation Experiments}
+\label{appendix: full simulation results}
+
+\noindent\textbf{Simulation results for each task.} We give the simulation results for each task in Table~\ref{table: simulation results}, which is supplementary to Table~\ref{table:simulation simplified} in our main paper. We report average success rates across 3 seeds. For HORA,  we report the normalized returns since this task is doing in-hand rotation and is not measured by success rates.
+
+
+
+\noindent\textbf{Success rates for experts.} In our simulated tasks, we apply Reinforcement Learning (RL)-trained agents to generate demonstrations. These expert policies are rigorously evaluated over 200 episodes, and their success rates are detailed in Table~\ref{table: expert SR}. For MetaWorld tasks, we present results from scripted policies.
+
+
+
+
+
+
+
+ 
+
+\noindent\textbf{Choice of prediction horizon.} DP3 applies a short action prediction and execution horizon $H=4, N_{act}=3$, and so does the baseline Diffusion Policy. This is mainly designed for the generality of \ours in complex tasks and real robot tasks, where the environment would be changed by human intervention and the policy needs to switch action immediately. As shown in Table~\ref{table:prediction horizon}, a shortened prediction horizon is competitive with a longer one.
+
+\input{tables/ablation_horizon}
+
+
+
+
+
+\subsection{Simple DP3}
+
+\begin{wrapfigure}{r}{0.35\textwidth}
+\vspace{-0.35in}
+    \centering
+     \includegraphics[width=0.35\textwidth]{figures/simple_DP3.pdf}
+    % \vspace{-0.2in}
+\end{wrapfigure}
+
+To enhance the applicability of DP3 in real-world robot learning, we simplify the policy backbone of DP3, which is identified as one critical factor that impacts inference speed. The refined version, dubbed \textbf{\textit{Simple DP3}}, offers 2x inference speed while maintaining high accuracy, as shown in Table~\ref{tab:summary simple DP3}. The efficiency stems from removing the redundant components in the UNet backbone. The implementation of Simple DP3 is available on \url{https://github.com/YanjieZe/3D-Diffusion-Policy}.
+
+
+
+\begin{table}[htbp]
+    \centering
+    % \vspace{-0.1in}
+     \caption{\textbf{Results of Simple DP3.} Compared to DP3, Simple DP3 achieves nearly 2x inference speed without losing much accuracy. Full evaluation results are given in Table~\ref{table: simple DP3}.}
+    \label{tab:summary simple DP3}
+    \vspace{-0.05in}
+    \begin{tabular}{l|ccc}
+    \toprule
+         Algorithm & Diffusion Policy & DP3  & \textbf{Simple DP3} \\
+         \midrule
+        Inference Speed (FPS) & $12.3$ & $12.7$ & $25.3$ ($\uparrow \mathbf{99}\%$) \\
+        Accuracy (Avg Success) & $44.0$ &  $74.4$ & $70.2$ ($\downarrow \mathbf{6}\%$) \\
+        \bottomrule
+    \end{tabular}
+
+\end{table}
+
+\input{tables/ablation_simple_dp3}
+
+\input{tables/results}
+\input{tables/expert_SR}
+
+
+\end{appendix}
+
+

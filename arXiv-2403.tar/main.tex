@@ -1,0 +1,75 @@
+\documentclass[conference]{IEEEtran}
+\usepackage{times}
+
+% numbers option provides compact numerical references in the text. 
+\usepackage[numbers]{natbib}
+\usepackage{multicol}
+\usepackage[bookmarks=true]{hyperref}
+
+\pdfinfo{
+   /Author (Homer Simpson)
+   /Title  (Robots: Our new overlords)
+   /CreationDate (D:20101201120000)
+   /Subject (Robots)
+   /Keywords (Robots;Overlords)
+}
+\input{preamble}
+\input{math}
+
+\begin{document}
+
+% \input{rebuttal}
+
+% paper title
+\title{3D Diffusion Policy:\\
+\Large{\revise{Generalizable Visuomotor Policy Learning via Simple 3D Representations}}\vspace{-0.1in}}
+
+
+
+\author{Yanjie Ze$^{1*}$\quad Gu Zhang$^{12*}$\quad Kangning Zhang$^{12}$\quad Chenyuan Hu$^{13}$\quad Muhan Wang$^{13}$\quad Huazhe Xu$^{314}$\vspace{0.03in}\\
+
+$^1$Shanghai Qi Zhi Institute\quad$^2$Shanghai Jiao Tong University\quad$^3$Tsinghua University, IIIS\quad$^4$Shanghai AI Lab \vspace{0.03in}\\\quad$^*$Equal contribution\vspace{0.1in}\\
+
+\href{https://3d-diffusion-policy.github.io}{\color{deepblue}\textbf{3d-diffusion-policy.github.io}\xspace}\vspace{-0.1in}}
+
+
+\twocolumn[{%
+\renewcommand\twocolumn[1][]{#1}%
+\maketitle
+\vspace{-0.05cm}
+\begin{center}
+    \centering
+    \captionsetup{type=figure}
+     \includegraphics[width=1.0\textwidth]{figures/teaser_figure_v3.pdf}
+     \vspace{-0.25in}
+    \caption{\small{\textbf{\oursfull} is a visual imitation learning algorithm that marries 3D visual representations with diffusion policies, achieving surprising effectiveness in diverse simulation and real-world tasks, with a practical inference speed.}}
+    \label{fig:teaser}
+\end{center}
+\vspace{-0.05in}
+}]
+
+
+\input{sec/0_abs}
+
+\IEEEpeerreviewmaketitle
+
+
+\input{sec/1_intro}
+\input{sec/2_related_work}
+\input{sec/3_method}
+\input{sec/4_exp}
+\input{sec/5_real_exp}
+\input{sec/6_conclusion}
+
+
+%% Use plainnat to work nicely with natbib. 
+
+% \clearpage
+\bibliographystyle{plainnat}
+\bibliography{main}
+
+\input{sec/X_appendix}
+
+\end{document}
+
+

@@ -1,0 +1,31 @@
+\begin{table*}[t]
+\centering
+\caption{\textbf{Comparing \ours with more baselines in simulation.} We include IBC, BCRNN, and their 3D variants, termed as IBC+3D and BCRNN+3D. The 3D variants use our DP3 Encoder for a fair comparison. }
+\vspace{-0.05in}
+\label{table: compare with more baselines}
+\resizebox{0.9\textwidth}{!}{%
+\begin{tabular}{l|ccc|ccc|cccc|cc}
+\toprule
+
+% & \multicolumn{3}{c}{\textbf{Adroit}} & \multicolumn{3}{c}{\textbf{MetaWorld}} \\
+ % Algorithm & Hammer & Door  & Pen & Assembly & Basketball & Shelf Place & \textbf{Average} \\
+    & \multicolumn{3}{c|}{Adroit} & \multicolumn{3}{c|}{MetaWorld} & \multicolumn{4}{c|}{DexArt} & \\
+  Algorithm $\backslash$  Task & Hammer & Door  & Pen & Assembly & Disassemble & Stick-Push & Laptop & Faucet & Toilet & Bucket & \textbf{Average} \\
+
+
+\midrule
+
+\textbf{\ours} & \ddbf{100}{0} & \ddbf{62}{4} & \ddbf{43}{6} & \ddbf{99}{1} & \ddbf{69}{4} & \ddbf{97}{4} & \ddbf{83}{1} & \ddbf{63}{2} & \ddbf{82}{4} & \ddbf{46}{2} & \ccbf{74.4}\\
+
+Diffusion Policy &	\dd{48}{17} & \dd{50}{5} & \dd{25}{4}	& \dd{15}{1} & \dd{43}{7} & 	\dd{63}{3} & \dd{69}{4} & \dd{23}{8}  & \dd{58}{2} & \ddbf{46}{1} & $44.0$ \\
+
+BCRNN & \dd{0}{0} & \dd{0}{0} & \dd{9}{3} & \dd{3}{4} & \dd{32}{12} & \dd{45}{11} &  \dd{3}{3} & \dd{1}{0} & \dd{5}{5} & \dd{0}{0} & $9.8$  \\
+BCRNN+3D & \dd{8}{14} & \dd{0}{0} & \dd{8}{1} & \dd{1}{5} & \dd{11}{6} & \dd{0}{0} &  \dd{29}{12} & \dd{26}{2} & \dd{38}{10} & \dd{24}{11} &  $14.5$ \\
+IBC & \dd{0}{0} & \dd{0}{0} & \dd{9}{2} & \dd{0}{0} & \dd{1}{1} & \dd{16}{2} & \dd{3}{2} & \dd{7}{1} & \dd{14}{1} & \dd{0}{0} & $5.0$ \\
+IBC+3D & \dd{0}{0} & \dd{0}{0} & \dd{10}{1} & \dd{18}{9} & \dd{3}{5} & \dd{50}{6} & \dd{1}{1} & \dd{7}{2} & \dd{15}{1} & \dd{0}{0} & $10.4$\\
+
+\bottomrule
+\end{tabular}}
+\vspace{-0.2in}
+\end{table*}
+

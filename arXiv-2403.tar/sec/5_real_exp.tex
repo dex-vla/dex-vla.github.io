@@ -1,0 +1,119 @@
+
+
+\section{Real World Experiments}
+
+\subsection{Experiment Setup}
+
+\textbf{Real robot benchmark.} \ours is evaluated across 4 tasks on 2 different robots, including an Allegro hand and a gripper. We use one RealSense L515 camera to obtain real-world visual observations. All the tasks are visualized in Figure~\ref{fig:real robot task visualization} and summarized in Table~\ref{table:task summary}. \revise{Our real-world setup and everyday objects used in our tasks are shown in Figure~\ref{fig:real world setup}.} We now briefly describe our tasks:
+
+\begin{figure}[t]
+    \centering
+\includegraphics[width=0.49\textwidth]{figures/setup_figure2.pdf}
+\vspace{-0.25in}
+    \caption{\revise{\textbf{(a) Our robots and objects. (b) Our real-world experiment setup.} We use an Allegro hand and a gripper based on Franka arms and include diverse everyday objects in our manipulation tasks. A RealSense L515 camera is applied to capture visual observations.}}
+    \label{fig:real world setup}
+    \vspace{-0.25in}
+\end{figure}
+
+\begin{enumerate}
+    \item \textbf{Roll-Up.} The Allegro hand wraps the plasticine multiple times to make a roll-up. 
+    \item \textbf{Dumpling.} The Allegro hand first wraps the plasticine and then pinchs it to make dumpling pleats. 
+    \item \textbf{Drill.} The Allegro hand grasps the drill up and moves towards the green cube to touch the cube with the drill.
+\item \textbf{Pour.} The gripper grasps the bowl, moves towards the plasticine, pours out the dried meat floss in the bowl, and places the bowl on the table.
+
+\end{enumerate}
+\revise{The randomization in each task is shown in Figure~\ref{fig:real task randomness}. For Roll-Up and Dumpling, the plasticine's shape and the appearance of the objects placed upon the plasticine are randomized. For Drill and Pour, the variations come from the random positions of the cube, drill, and bowl.}
+
+Notably, our tasks using the multi-finger hand are carefully designed to show its advantage over the parallel gripper: In Roll-Up and Dumpling, robots could wrap plasticine without requiring extra tools, unlike RoboCook~\citep{shi2023robocook}; In Drill, the drill in the real world is large and heavy, which is quite difficult for the gripper to grasp.
+
+
+
+\textbf{Expert demonstrations} are collected by human teleoperation. The Franka arm and the gripper are teleoperated by the keyboard. The Allegro hand is teleoperated with human hands by vision-based retargeting~\citep{qin2023anyteleop,handa2020dexpilot}. Since our tasks contain more than one stage and include complex multi-finger robots and deformable objects, making the process of demonstration collection very time-consuming, we only provide 40 demonstrations for each task.
+
+\textbf{Baselines.} Based on our simulation experiments, image-based and depth-based diffusion policies are still powerful, thus we select them as baselines for real-world experiments. Different vision modalities are visualized in Figure~\ref{fig:different 3d representations}.
+
+
+\begin{figure}[htbp]
+    \centering
+\includegraphics[width=0.5\textwidth]{figures/task_randomness2.pdf}
+\vspace{-0.1in}
+    \caption{\revise{\textbf{Randomization in collected demonstrations for real-world tasks.} \textbf{Roll-Up}: The shape of the plasticine and the vegetables on it varies in each trajectory. \textbf{Dumpling}: The shape of the plasticine and the distribution of the meat floss on it are different in each trajectory. \textbf{Drill}: The red and blue rectangles respectively mark the range of positions where the cube and drill can be placed. \textbf{Pour}: The green rectangle marks the range of positions of the bowl.}}
+    \label{fig:real task randomness}
+    \vspace{-0.25in}
+\end{figure}
+
+
+\begin{figure*}[t]
+    \centering
+\includegraphics[width=0.99\textwidth]{figures/real_task_visualization.pdf}
+\vspace{-0.08in}
+    \caption{\textbf{Our real robot benchmark} consists of 4 challenging tasks. The Allegro hand is required to make a \textbf{\textit{Dumpling}}, \textbf{\textit{Drill}} the cube, and make a \textbf{\textit{Roll-Up}}. The gripper is required to \textbf{\textit{Pour}} dried meat floss in the bowl. Each task contains multiple stages. We visualize the point clouds of the collected trajectories.}
+    \label{fig:real robot task visualization}
+    \vspace{-0.17in}
+\end{figure*}
+
+
+
+
+
+
+\begin{figure}[t]
+    \centering
+    % \vspace{-0.05in}
+    \includegraphics[width=0.5\textwidth]{figures/different_3d_repr.pdf}
+    \vspace{-0.22in}
+    \caption{\textbf{Different vision modalities in the real world,} include images, depths, and point clouds. }
+    \label{fig:different 3d representations}
+    \vspace{-0.12in}
+\end{figure}
+
+
+\subsection{Effectiveness}
+Results for our real robot tasks are given in Table~\ref{table: main real robot}. Consistent with our simulation findings, we observe in real-world experiments that \ours could handle all tasks with high success rates, given only \textit{40} demonstrations. Interestingly, we also observe that while both image-based and depth-based diffusion policies have comparatively low average accuracies, they exhibit distinct strengths in specific tasks. For instance, the image-based diffusion policy excels in the Drill task but fails entirely in Roll-Up. In contrast, the depth-based policy achieves a notable success rate of $40\%$ in Roll-Up.
+
+
+\input{tables/results_real}
+
+
+\subsection{Generalization}
+Besides the effectiveness in handling all tasks, \ours show strong generalization abilities in the real world. We categorize the generalization abilities of \ours into 4 aspects and detail each aspect as follows.
+
+\textbf{Spatial generalization.} As illustrated in our motivating example, \ours could better extrapolate in 3D space. We demonstrate this property in the real world, as shown in Table~\ref{table: spatial generalization}. We find that baselines fail to generalize to all test positions while \ours succeed in 4 out of 5 trials.
+
+\input{tables/spatial_generalization}
+
+\textbf{Appearance generalization.} \ours is designed to process point clouds without color information, inherently enabling it to generalize across various appearances effectively. As demonstrated in Table~\ref{table: appearance gen}, \ours consistently exhibits successful generalization to cubes of differing colors, while baseline methods could not achieve. It is noteworthy that the depth-based diffusion policy also does not incorporate color as input. However, due to its lower accuracy on the training object, the ability to generalize is also limited.
+
+One solution to improve the appearance generalization ability of image-based methods is applying strong data augmentation during training~\citep{hansen2022lfs,hansen2021svea}, which however could impede the learning process \citep{yuan2022pieg,hansen2021svea}. More importantly, the primary objective of this work is to demonstrate that \ours, even without the aid of any data augmentation, can effectively generalize, thereby underscoring the potential of 3D representations in real robot learning.
+
+\input{tables/apperance_generalization}
+
+
+
+\textbf{Instance generalization.} Achieving generalization across diverse instances, which vary in shape, size, and appearance, presents a significantly greater challenge compared to mere appearance generalization. In Table~\ref{table: instance gen}, we demonstrate that \ours effectively manages a wide range of everyday objects. This success can be primarily attributed to the inherent characteristics of point clouds. Specifically, the use of point clouds allows for policies that are less prone to confusion, particularly when these point clouds are downsampled. This feature significantly enhances the model's ability to adapt to varied instances.
+
+\input{tables/instance_generalization}
+
+
+
+\textbf{View generalization.} Generalizing image-based methods across different views is notably challenging~\citep{yang2023movie}, and acquiring training data from multiple views can be time-consuming and costly~\citep{ze2023gnfactor,shen2023distilled}. We demonstrate in Table~\ref{table: view gen} that \ours effectively addresses this generalization problem when the camera views are altered slightly. It is important to note that since the camera view is altered, we manually \revise{transform the point clouds} and adjust the cropped space of the point clouds. \revise{Accurate transformation isn't necessary due to the robustness of our network. However, it is crucial to acknowledge that while the network can generalize across minor variations in camera views, significant changes might be hard to handle.}
+
+% This adjustment allows \ours to seamlessly generalize across views.~\gu{Do we need this sentence?}
+
+\input{tables/view_generalization}
+
+\revise{
+\textbf{Cluttered Scenes}. Despite the simplicity of the DP3 Encoder, we demonstrate that DP3 is capable of handling tasks in complex real-world cluttered environments. To illustrate this, we design a pick \& place task (i.e. pick the cube and place it in the bowl) set in cluttered scenes using a gripper and collect 50 demonstrations for training. The results presented in Table~\ref{table: ablation cluttered scenes} show that DP3 solves the task with a high success rate. Aligning with our simulation experiments, DP3 equipped with PointNeXt fails to address the task. Meanwhile, DP3 using color point clouds as input performs comparably to the original DP3 when picking the training yellow cube, yet it struggles with other colored cubes and diverse objects. This demonstrates the effectiveness and generalization ability of DP3 in complex scenes.
+}
+
+\input{tables/ablation_cluttered_scene}
+
+
+\subsection{\revise{Observation on Deployment Safety}}
+\label{section: safe deployment}
+In our real-world experiments, we observe that image-based and depth-based diffusion policies often deliver unpredictable behaviors in real-world experiments, which necessitates human termination to ensure robot safety. We define this situation as \textit{safety violation} and compute the safety violation rate in our main real-world experiments, shown in Table~\ref{table: safety violation}. Interestingly and surprisingly, we find that \ours rarely violates the safety, showing that \ours is a practical and hardware-friendly method for real robot learning. \revise{An intuitive explanation is that since the robots operate in 3D space, directly observing 3D information helps avoid collision. It is important to note that our assessment of safety is primarily qualitative. We intend to explore a more theoretical understanding of this observation in our future work.}
+
+
+
+\input{tables/safety}
+

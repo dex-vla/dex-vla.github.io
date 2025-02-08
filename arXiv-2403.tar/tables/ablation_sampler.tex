@@ -1,0 +1,26 @@
+\begin{table}[H]
+\centering
+\vspace{-0.1in}
+\caption{\textbf{Ablation on the noise sampler.} \ours uses DDIM originally, and we also try with DPM-solver++~\citep{lu2022dpm_solver}.}
+\label{table:noise sampler}
+\vspace{-0.05in}
+\resizebox{0.49\textwidth}{!}{%
+\begin{tabular}{l|cccccc|ccc}
+\toprule
+
+% & \multicolumn{3}{c}{\textbf{Adroit}} & \multicolumn{3}{c}{\textbf{MetaWorld}} \\
+ % Algorithm & Hammer & Door  & Pen & Assembly & Basketball & Shelf Place & \textbf{Average} \\
+
+  Algorithm & H & D  & P & A & B & S & \textbf{Average} \\
+
+
+\midrule
+
+\textbf{DDIM} & \dd{100}{0} & \dd{62}{4} & \dd{43}{6} & \dd{49}{5} & \dd{91}{7} & \dd{34}{3} & $\mathbf{63.2}$\\
+DPM-solver++ & \dd{12}{4} & \dd{9}{5} & \dd{26}{5} & \dd{43}{12} & \dd{83}{11} & \dd{36}{9} & $34.8$ \\
+
+
+\bottomrule
+\end{tabular}}
+\end{table}
+

@@ -1,0 +1,204 @@
+
+\section*{\textbf{Rebuttal for RSS Submission. Paper-ID [1]}}
+
+We thank area chairs and all the reviewers for their insightful comments and appreciation of our strengths such as ``very thorough evaluation" (meta review), ``high quality of the presentation" (Reviewer xWeZ), ``a useful paper for the community" (Reviewer 7AR1), and ``imaginative real-world tasks" (Reviewer sxey). In reply to the reviews, we first give a summary of our paper revisions and address the questions of each reviewer below.
+
+\noindent\textbf{Summary of revision.} In our revised paper, we mainly
+\begin{enumerate}
+    \item 
+change the title from “3D Diffusion Policy” to “3D Diffusion Policy: Generalizable Visuomotor Policy Learning via Simple 3D Representations”.
+
+\item update MetaWorld results in all tables and figures.
+
+\item rephrase the original “Safety Violation” section (Section~\ref{section: safe deployment}).
+
+
+\item  add the simulation results using oracle states (Table~\ref{table: different 3D form}).
+
+\item add the real-world results in cluttered scenes (Table~\ref{table: ablation cluttered scenes}). Videos are provided in the supplementary file (\textbf{rebuttal.mp4}).
+
+\end{enumerate}
+Besides, we further improve our main paper:
+\begin{enumerate}
+\item add more discussion on related works to better clarify our contribution (Section~\ref{section: visual imitation learning}).
+\item add the visualization of the real-world robot setup (Figure~\ref{fig:real world setup}).
+\item add the visualization of real-world task randomness (Figure~\ref{fig:real task randomness}).
+
+\item  add visualizations of 3D in simulation (Figure~\ref{fig:sim 3d}).
+\end{enumerate}
+
+
+
+
+\section*{Response to Meta Review}
+\noindent\textbf{Q1:} seemingly weak baselines
+
+\noindent\textbf{A1:} Thank the AC and Reviewer 7AR1 for noting this issue. In our revised version, we have updated the baseline performance on MetaWorld environments. Compared to the old results, the baseline Diffusion Policy achieves a large improvement on MetaWorld Easy tasks (59.7 $\rightarrow$ 83.6). This improvement leads to a drop in relative improvement (55.3\% → 24.2\%) and absolute improvement (26.3\% → 14.6\%) of DP3 (see Table~\ref{table:simulation simplified}). Figure~\ref{fig:demo scaling} is also updated.
+
+\vspace{0.1in}
+
+\noindent\textbf{Q2:} claims around safety violations are not well justified
+\noindent\textbf{A2:} We have revised Section~\ref{table: safety violation} about safety. We change the title of the section to “Observation on Deployment Safety” and emphasize in the text that “our assessment of safety is primarily qualitative”.
+
+\vspace{0.1in}
+
+\noindent\textbf{Q3:} The core contributions of the paper are at times unclear (perhaps due to the choice to focus on the diffusion aspects of their policy as opposed to the point encoder). It would be good if the authors can clearly describe the new knowledge provided by this work.
+
+\noindent\textbf{A3:} We revised our introduction in the paper to detail our contributions, as listed below:
+\begin{enumerate}
+    \item We propose 3D Diffusion Policy (DP3), an effective visuomotor policy that generalizes across diverse aspects with few demonstrations.
+    \item To reduce the variance brought by benchmarks and tasks, we evaluate DP3 in a broad range of simulated and real-world tasks, showing the universality of DP3.
+    \item We conduct comprehensive analyses on visual representations in DP3 and show that a simple point cloud representation is preferred over other intricate 3D representations and is better suited for diffusion policies over other policy backbones.
+    \item DP3 is able to perform real-world deformable object manipulation using a dexterous hand with only 40 demonstrations, demonstrating that complex high-dimensional tasks could be handled with little human data.
+\end{enumerate}
+
+\vspace{0.1in}
+
+
+\noindent\textbf{Q4:} The authors may wish to consider a title change to better reflect the core contribution.
+
+
+\noindent\textbf{A4:} We have changed the title from “3D Diffusion Policy” to “3D Diffusion Policy: Generalizable Visuomotor Policy Learning via Simple 3D Representations”.
+
+
+\section*{Response to Reviewer xWeZ}
+\noindent\textbf{Q1:} The key limitation here is that their proposed 3D visual processing architecture is not a general 3D visual processing architecture; they present evidence for generalization to certain types of variation in the scene, but little-to-no evidence for dramatic variations in: 1) camera pose; 2) object re-orientation; 3) distractor objects/geometry. In general, PointNet-style architectures without local multi-scale features cannot distinguish between While these limitations are made clear in the work, it’s not clear whether or not this system would retain any of its generalizability properties if it was placed in an open-world setting w/ substantially more visual complexity.
+
+\noindent\textbf{A1:} 
+We acknowledge the limitations of DP3 in open-world settings, where the usage of foundation models might be necessary. In our work, we aim primarily to demonstrate that a simple architecture suffices for many robotic tasks. In addition, we conduct extra real-world experiments to demonstrate that DP3 can handle complex cluttered scenes effectively, as shown in Table~\ref{table: ablation cluttered scenes}. These results indicate that DP3 maintains its generalization capabilities even in more complex environments.
+
+\vspace{0.1in}
+
+\noindent\textbf{Q2:} One limitation is that the point cloud baselines are a bit underpowered; while the comparisons provided are fair in the sense that they are trained in the same way, there are various pre-training steps, auxiliary losses, and self-supervision targets that other methods have used to improve sample-efficiency for 3D point cloud processing. It would be interesting to see if the results hold when such steps are taken for the visual processing side.
+
+
+\noindent\textbf{A2:} 
+In our initial submission, we have included experiments using a pre-trained encoder, as shown in Table~\ref{table: different 3D encoder}. These pre-trained encoders demonstrate some improvements over their un-pretrained counterparts, although they still fall short of DP3. We also show that the gap may be due to the suboptimal design of the neural network architecture, as shown in Table~\ref{table: modify PointNet}. Additionally, we agree with the reviewer that exploring a variety of pre-training methods, auxiliary losses, and self-supervision targets could enhance the performance of PointNeXt/Point Transformer, which we remain in our future work.
+
+\vspace{0.1in}
+
+\noindent\textbf{Q3:} By and large, while the system is an excellent example of a rigorous approach to improving a class of policies based on task structure, the design insights (other than the PointNet-to-DP3Encoder ablation) are limited. Specifically, in a scenario where visual complexity for a task is low, it’s natural to use the simplest-viable architecture to accomplish the task. It has already been shown that diffusion models are capable of representing complex distributions for end-effector control.
+
+\noindent\textbf{A3:} We conduct extra real-world experiments to demonstrate that DP3 can handle complex cluttered scenes effectively, as shown in Table~\ref{table: ablation cluttered scenes}. It is shown that DP3 with PointNeXt could not solve the task, aligning with our simulation experiments.
+
+\vspace{0.1in}
+
+
+\noindent\textbf{Q4:} The “safety violation rule” ablation overstates the result - being able to represent multimodal demonstrations with higher fidelity in a generally “simple” workspace with a very simple safe manifold is not strong evidence that it’s safer policy class overall. The experiment is useful nonetheless, but should maybe be phrased more anecdotally than quantitatively (at least in the main text). 
+
+\noindent\textbf{A4:} Thank you for the suggestion. We have revised Section~\ref{table: safety violation} as suggested. Specifically, we change the subtitle to “Observation on Deployment Safety” and emphasize in the text that “our assessment of safety is primarily qualitative”.
+
+
+\vspace{0.1in}
+
+\noindent\textbf{Q5:} In table VII, the “w/ color” row has a larger number but is not bolded. Is this a typo?
+
+\noindent\textbf{A5:} Yes. We have fixed the typo.
+
+\vspace{0.1in}
+
+
+\noindent\textbf{Q6:} I might find the novelty of the visual system more convincing if they had an ablation showing performance vs. a “ground-truth” object pose policy, i.e. take the low-dim pose states of all objects in a scene and condition a diffusion policy on those instead of a visual-based latent.
+
+\noindent\textbf{A6:} We have included such experiments in Table~\ref{table: different 3D form}, as suggested. The oracle states contain robot poses and velocities, object states, and target goals. We found that the performance of DP3 closely approximates, and in some cases slightly surpasses, that of the oracle states. This suggests that our 3D visual system might learn a nearly optimal policy from demonstrations in the evaluated tasks.
+
+\vspace{0.1in}
+
+\noindent\textbf{Q7:} In “View Generalziation” ablation, are the input points normalized/scaled/shifted any way before input? I.e. is the network equivariant or invariant to translation by design? If not, how is the equivariance achieved?
+
+\noindent\textbf{A7:}  Our network is designed without equivariance, and the normalization module in the encoder enables partial invariance. In addition, we manually rotate the point cloud and adjust the cropping bounding box. Accurate transformation isn't necessary due to the robustness of our network. However, it is crucial to acknowledge that while the network can generalize across minor variations in camera views, significant changes might be hard to handle. We have clarified this point in the revised paper.
+
+
+
+\section*{Response to Reviewer 7AR1}
+
+\noindent\textbf{Q1:} The model leverages only depth information for input. While the paper frames this as a positive generalization aspect (see the experiments on appearance/spatial generalization in Table X and XI), I don't necessarily agree with this as it does limit applicability to tasks which require such information. The benefits of generalization are simply due to the reduced representational power associated with the input modality. Tasks which require information related to color or texture, e.g. pick up the green cube (or in keeping with the food theme, pick up the ripe red tomato), would not work with this approach.
+
+\noindent\textbf{A1:} 
+We agree with the reviewer that omitting color could result in a loss of semantic information. However, we wish to highlight that our method can incorporate color as an input without significant loss in accuracy, as demonstrated in Table~\ref{table: ablation component}. This indicates that for tasks where color is a must, DP3 is able to handle them effectively.
+
+
+\vspace{0.1in}
+
+\noindent\textbf{Q2:} Although the proposed method clearly works well, I am somewhat surprised that the baseline Diffusion Policy performs so poorly on many of the tasks. Is this due to an implementation or training issue, or is it genuinely that the image-only representation is poorly suited for many of the tasks? It might have been nice to have included at least some of the simulated tasks originally performed in the original Diffusion Policy paper such that it can be shown whether previously reported results are reproducible or not.
+
+\noindent\textbf{A2:} Thank the reviewer for noting this issue. In our revised version, we have updated the baseline performance in MetaWorld environments. Compared to results in the initial submission, the baseline Diffusion Policy achieves a large improvement in MetaWorld Easy tasks (59.7$\rightarrow$83.6). This improvement further leads to a drop in relative improvement of DP3 (55.3\% $\rightarrow$24.2\%). Figure~\ref{fig:demo scaling} is also updated.
+
+\vspace{0.1in}
+
+\noindent\textbf{Q3:} The proposed method significantly benefits from cropping point clouds (Table VII), as the accuracy improves from 28.5 to 63.2. This opens the door then that similar performance boosts might be achieved for other input modalities (e.g. RGBD) given the right preprocessing techniques, suggesting that the nature of the embedding/input modality itself may not be as important as performing the right pre-processing steps to lead to generalizable representations.
+
+\noindent\textbf{A3:} Yes, we agree with the reviewer that appropriate pre-processing for other input modalities is crucial. In our paper, all image-based baselines, including RGB, RGB-D, and depth-only, apply random cropping as the data augmentation/pre-processing technique during training, aligning with Diffusion Policy. More complex pre-processing techniques, such as semantic segmentation, should be explored in future work.
+
+\vspace{0.1in}
+
+\noindent\textbf{Q4:} In Table 7, it appears using a color channel with DP3 actually improves performance, contrary to what the text states (63.7 average accuracy with color vs 63.2 without). Does the addition of the color channel significantly hurt performance for object appearance generalization? If such experiments were run, it would be beneficial to indicate as such.
+
+\noindent\textbf{A4:} We have conducted extra real-world experiments given in Table~\ref{table: ablation cluttered scenes}, to evaluate the generalization ability of DP3 with color. We observe that DP3 with color achieves the same accuracy as DP3 without color when picking the training object, yet DP3 with color fails to pick all other colored objects.
+
+\vspace{0.1in}
+
+\noindent\textbf{Q5:} Given that many types of preprocessing were attempted with the point cloud method (Table VII), were preprocessing methods applied to other input types such as RGBD in Table IV?
+
+
+\noindent\textbf{A5:} In our paper, all image-based baselines, including RGB, RGB-D, and depth-only, apply random cropping as the data augmentation/pre-processing technique during training, aligning with Diffusion Policy. More complex pre-processing techniques, such as semantic segmentation, should be explored in future work.
+
+\section*{Response to Reviewer sxey}
+
+\noindent\textbf{Q1:} In particular, I question the main contribution of the paper. In essence, the paper claims that it shows that the use of 3D pointcloud data, derived manually from RGB-D data, improves the performance of a diffusion policy learned with behavioural cloning/imitation learning. First, I wonder why diffusion policies? Yes, they are a novel type of representing action distributions, but the paper does not answer if diffusion policies are the best choice for the presented tasks (there are no other types of policies evaluated), nor if the presented conclusion holds only for diffusion policies. Furthermore, the conclusion that using RGB-D/pointcloud data over pure 2D/RGB data helps improve performance is a known effect addressed in previous robotics literature, including in the manipulation domain. In other words, I don't find the conclusion of the paper surprising nor general enough to explain if this is an effect due to the particular inherent properties of diffusion policies - in the end, the paper could have also used any other type of policy network and have arrived at the same conclusion. One way to tackle this problem would be to perform ablation studies with/without diffusion policies and identify a clear conceptual problem in diffusion policies when operating on image data.
+
+\noindent\textbf{A1:} The questions from the reviewer could be answered in a two-part format: (1) why do we use diffusion policies and (2) it is well-known that 3D is better than 2D and then why do we still study this? We wanted to emphasize that we have previously addressed these points in our initial submission, and we reiterate our responses here for clarity.
+\begin{enumerate}
+    \item \textbf{Why do we use diffusion policies?} We use diffusion policies not because diffusion policies are new and novel, but because diffusion policies achieve SOTA performance among visuomotor policy learning algorithms and are more expressive in handling 3D data. As shown in Table~\ref{table: compare with more baselines}, we replace diffusion policies with other policy backbones such as BC-RNN and IBC, and we observe that diffusion policies could gain significantly more improvements from 3D data. 
+    \item \textbf{It is well-known that 3D is better than 2D and then why do we still study this?} We are not only showing 3D is better than 2D, but also demonstrating the effectiveness of our proposed 3D representation over other 3D representations, as shown in both our simulation experiments (Table~\ref{table: different 3D encoder} and  Table~\ref{table: different 3D form}) and real-world experiments (Table~\ref{table: main real robot}).
+\end{enumerate}
+Besides, we wanted to respectfully point out that our initial submission has included experiments that are suggested by Reviewer sxey, as given in Table~\ref{table: compare with more baselines}, where we replace diffusion policies with other policy backbones.
+
+
+
+
+\vspace{0.1in}
+
+\noindent\textbf{Q2:} Related to this issue, I find the technical depth and accuracy of the paper lacking. Many important details of the methodology are missing or are just explained within a few sentences without further technical explanations. For example, the paper states it uses imitation learning, which, based on the description, I assume means in this context behaviour cloning using a supervised loss. Loss functions, problem statements and analyses are missing, which generates doubt about the ability of other researchers to find use of the results or be able to reproduce them independently.
+
+\noindent\textbf{A2:} 
+Behavior cloning is formulated as noise prediction in diffusion models, following the approach in the Diffusion Policy paper. The loss function is given in Equation~\ref{eq: loss},
+$$
+\mathcal{L}=\text{MSE}\left(\boldsymbol{\epsilon}^k, \boldsymbol{\epsilon}_\theta(\bar{\alpha_k} a^0 + \bar{\beta_k} \boldsymbol{\epsilon}^k, k, v, q)\right)\,.
+$$
+During inference, neural networks would perform a reverse diffusion process to predict the action. More implementation details are described in the appendix. Since this is not our contribution, we briefly describe this part in our main paper and direct readers to the Diffusion Policy paper for more detailed information. 
+
+\vspace{0.1in}
+
+\noindent\textbf{Q3:} The paper is not coherent, hard to digest and lacks purpose. In its current form it is basically a bag of results, which do look nice and impressive, but after reading the paper one wonders what the take-away should be: There are no new methodologies or methods presented, the experiments seem to be either standard benchmarks or variations thereof. The use of diffusion policies does not seem to really matter, as the main evaluation focus is on the type of input data or encoder used, however the paper puts a strong focus on diffusion policies (see eg the title). At the same time, the paper is not a benchmark paper due to its restricted set of methods evaluated. The main effect the paper reports, namely that 3D data can increase performance, is established (see eg the references below).
+
+\noindent\textbf{A3:}  Thank you for the suggestion. We have modified our title to better reflect our contributions. Besides, we have revised our introduction in the paper to more comprehensively detail our contributions, as listed below:
+\begin{enumerate}
+    \item We propose 3D Diffusion Policy (DP3), an effective visuomotor policy that generalizes across diverse aspects with few demonstrations.
+    \item To reduce the variance brought by benchmarks and tasks, we evaluate DP3 in a broad range of simulated and real-world tasks, showing the universality of DP3.
+    \item We conduct comprehensive analyses on visual representations in DP3 and show that a simple point cloud representation is preferred over other intricate 3D representations and is better suited for diffusion policies over other policy backbones.
+    \item DP3 is able to perform real-world deformable object manipulation using a dexterous hand with only 40 demonstrations, demonstrating that complex high-dimensional tasks could be handled with little human data.
+\end{enumerate}
+
+
+\vspace{0.1in}
+
+\noindent\textbf{Q4:} I do like the discussion of safety. However, this feels again just like 'another result' added to the bag, lacking technical depth and having no real purpose. The paper should state the safety bounds used in the experiments or clear measures used to reach the reported numbers. Otherwise, it could be moved to the appendix in its current form.
+
+\noindent\textbf{A4:} Thank you for the suggestion. We have revised Section~\ref{table: safety violation} as suggested. Specifically, we change the subtitle to “Observation on Deployment Safety” and emphasize in the text that “our assessment of safety is primarily qualitative”.
+
+
+\vspace{0.1in}
+
+\noindent\textbf{Q5:} Define clearly what the contribution of the paper is. Is it the evaluation of the use of different sources for 3D information, is it a comprehensive study of the effect of using 3D information in different robotic tasks, or is it about a specific effect/property inherent to diffusion policies you can tackle with 3D state observations (if so, please add some theoretic or convincing arguments to the paper)
+
+\noindent\textbf{A5:} Thank you for the suggestion. We revised our introduction in the paper to detail our contributions, as mentioned above.
+
+\vspace{0.1in}
+
+\noindent\textbf{Q6:} Consider adding additional ablation studies for the use of diffusion policies versus standard MLP policies
+
+\noindent\textbf{A6:} In our initial submission, such experiments have been included in Table~\ref{table: compare with more baselines}, where we replace diffusion policies with other policy backbones, including BCRNN and IBC.
+
+
+\clearpage

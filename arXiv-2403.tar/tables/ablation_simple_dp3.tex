@@ -1,0 +1,32 @@
+\begin{table*}[htbp]
+\centering
+\vspace{-0.2in}
+\caption{\textbf{Full evaluation results of Simple DP3.} We evaluate Simple DP3 on 10 tasks and compare it with DP3 and find that Simple DP3 could achieve results very competitive to DP3.}
+\vspace{-0.05in}
+\label{table: simple DP3}
+\resizebox{0.9\textwidth}{!}{%
+\begin{tabular}{l|ccc|ccc|cccc|cc}
+\toprule
+
+% & \multicolumn{3}{c}{\textbf{Adroit}} & \multicolumn{3}{c}{\textbf{MetaWorld}} \\
+ % Algorithm & Hammer & Door  & Pen & Assembly & Basketball & Shelf Place & \textbf{Average} \\
+    & \multicolumn{3}{c|}{Adroit} & \multicolumn{3}{c|}{MetaWorld} & \multicolumn{4}{c|}{DexArt} & \\
+  Algorithm $\backslash$  Task & Hammer & Door  & Pen & Assembly & Disassemble & Stick-Push & Laptop & Faucet & Toilet & Bucket & \textbf{Average} \\
+
+
+\midrule
+
+
+\textbf{\ours} & \ddbf{100}{0} & \ddbf{62}{4} & \ddbf{43}{6} & \ddbf{99}{1} & \ddbf{69}{4} & \ddbf{97}{4} & \ddbf{83}{1} & \ddbf{63}{2} & \ddbf{82}{4} & \ddbf{46}{2} & \ccbf{74.4}\\
+
+Diffusion Policy &	\dd{48}{17} & \dd{50}{5} & \dd{25}{4}	& \dd{15}{1} & \dd{43}{7} & 	\dd{63}{3} & \dd{69}{4} & \dd{23}{8}  & \dd{58}{2} & \ddbf{46}{1} & $44.0$ \\
+
+
+\textbf{Simple DP3} & \ddbf{100}{0} & \dd{58}{4} & \ddbf{46}{5} & \dd{79}{1} & \dd{50}{3} & \ddbf{97}{5} & \ddbf{84}{2} & \ddbf{63}{3} & \dd{81}{6} & \dd{44}{6} & $70.2$ \\
+
+
+\bottomrule
+\end{tabular}}
+\vspace{-0.2in}
+\end{table*}
+

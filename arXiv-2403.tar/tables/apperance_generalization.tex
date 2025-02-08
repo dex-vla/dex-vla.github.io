@@ -1,0 +1,25 @@
+\begin{table}[htbp]
+\centering
+\vspace{-0.05in}
+\caption{\textbf{Appearance generalization on Drill.} Algorithms are trained with the green cube only and evaluated on 5 different colored cubes. Each color is evaluated with one trial.}
+\label{table: appearance gen}
+\vspace{-0.05in}
+\includegraphics[width=0.48\textwidth]{figures/gen_appear.pdf}
+\resizebox{0.4\textwidth}{!}{%
+
+\begin{tabular}{l|ccccccccc}
+\toprule
+
+
+Apperance Generalization (\textcolor{ggreen}{$\blacksquare$}) & \textcolor{red}{$\blacksquare$}  & \textcolor{blue}{$\blacksquare$}  & \textcolor{yellow}{$\blacksquare$}    & \textcolor{orange}{$\blacksquare$}  & \textcolor{grey}{$\blacksquare$}  \\
+% \midrule
+% \includegraphics[width=0.15\linewidth]{figures/appear_gen/green.jpg}&\includegraphics[width=0.15\linewidth]{figures/appear_gen/red.jpg}&\includegraphics[width=0.15\linewidth]{figures/appear_gen/blue.jpg}&\includegraphics[width=0.15\linewidth]{figures/appear_gen/yellow.jpg}&\includegraphics[width=0.15\linewidth]{figures/appear_gen/orange.jpg}&\includegraphics[width=0.15\linewidth]{figures/appear_gen/white.jpg}\\
+
+\midrule
+  Diffusion Policy & \textcolor{gred}{\XSolidBrush} & \textcolor{gred}{\XSolidBrush} & \textcolor{gred}{\XSolidBrush} & \textcolor{gred}{\XSolidBrush} & \textcolor{gred}{\XSolidBrush} \\
+  Diffusion Policy (Depth) & \textcolor{gred}{\XSolidBrush} & \textcolor{gred}{\XSolidBrush} & \textcolor{gred}{\XSolidBrush} & \textcolor{gred}{\XSolidBrush} & \textcolor{gred}{\XSolidBrush} \\
+  \textbf{\ours}  & \textcolor{ggreen}{\Checkmark} & \textcolor{ggreen}{\Checkmark} & \textcolor{ggreen}{\Checkmark} & \textcolor{ggreen}{\Checkmark} & \textcolor{ggreen}{\Checkmark} \\
+\bottomrule
+\end{tabular}}
+\vspace{-0.1in}
+\end{table}

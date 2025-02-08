@@ -1,0 +1,138 @@
+\begin{table*}[htbp]
+\centering
+\caption{\textbf{Success rates of experts on 72 simulation tasks.} We evaluate 200 episodes for each task. For MetaWorld tasks, we evaluate both BAC agents and the script policies provided officially in MetaWorld. For DexDeform tasks, the demonstrations are collected by human teleportation~\citep{li2023dexdeform} and we record the success rates as 100\%.}
+\label{table: expert SR}
+\vspace{-0.1in}
+\begin{flushleft}
+\resizebox{0.9\textwidth}{!}{%
+\begin{tabular}{l|ccc|ccccccc}
+\toprule
+& \multicolumn{3}{c|}{\textbf{Adroit}~\citep{rajeswaran2017dapg}} & \multicolumn{6}{c}{\textbf{Bi-DexHands}~\citep{chen2022bidexhands}} \\
+
+ Alg $\backslash$ Task & Hammer  & Door & Pen & Block Stack & Bottle Cap & Door Open Outward & Grasp And Place & Hand Over & Scissors\\
+ 
+\midrule
+
+Expert & \cc{99.0} & \cc{100.0} & \cc{97.0} & \cc{83.5} & \cc{100.0} & \cc{100.0} & \cc{100.0} & \cc{77.0} & \cc{99.5}\\
+ 
+\bottomrule
+\end{tabular}}
+
+\resizebox{0.9\textwidth}{!}{%
+\begin{tabular}{l|cccc|cccccc|cc|cc}
+\toprule
+& \multicolumn{4}{c|}{\textbf{DexArt}~\citep{bao2023dexart}} & \multicolumn{6}{c|}{\textbf{DexDeform}~\citep{li2023dexdeform}} & \multicolumn{2}{c|}{\textbf{DexMV}~\citep{qin2022dexmv}} & \textbf{HORA}~\citep{qi2023hora}\\
+
+ Alg $\backslash$ Task & Laptop & Faucet & Toilet & Bucket & Rope & Bun & Dumpling & Wrap & Flip & Folding & Pour & Place Inside & Rotation\\
+ 
+\midrule
+
+Expert & \cc{86.5} & \cc{58.0} & \cc{66.5} & \cc{80.0} & \cc{100.0} & \cc{100.0} &  \cc{100.0} & \cc{100.0} & \cc{100.0} & \cc{100.0} & \cc{88.5} & \cc{64.5} & \cc{80.5}\\
+\bottomrule
+\end{tabular}}
+
+
+
+\resizebox{0.9\textwidth}{!}{%
+\begin{tabular}{l|cccccccc}
+\toprule
+& \multicolumn{7}{c}{\textbf{Meta-World~\citep{yu2020metaworld} (Easy)}} \\
+
+ Alg $\backslash$ Task & Button Press & Button Press Topdown & Button Press Topdown Wall & Button Press Wall & Coffee Button & Dial Turn & Door Close \\
+\midrule
+
+Expert & \cc{100.0} & \cc{100.0} & \cc{100.0} & \cc{98.5} & \cc{100.0} & \cc{100.0} & \cc{100.0}\\
+
+\bottomrule
+\end{tabular}}
+
+
+
+\resizebox{0.9\textwidth}{!}{%
+\begin{tabular}{l|ccccccccccc}
+\toprule
+& \multicolumn{9}{c}{\textbf{Meta-World (Easy)}} \\
+
+ Alg $\backslash$ Task & Door Lock & Door Open & Door Unlock & Drawer Close & Drawer Open & Faucet Close & Faucet Open & Handle Press & Handle Pull\\
+\midrule
+
+
+
+ Expert & \cc{100.0} & \cc{98.5} & \cc{100.0} & \cc{100.0} &\cc{100.0} & \cc{100.0} & \cc{100.0} & \cc{100.0} & \cc{100.0}\\
+ 
+\bottomrule
+\end{tabular}}
+
+
+\resizebox{0.9\textwidth}{!}{%
+\begin{tabular}{l|ccccccccccc}
+\toprule
+& \multicolumn{8}{c}{\textbf{Meta-World (Easy)}} \\
+
+ Alg $\backslash$ Task & Handle Press Side & Handle Pull Side & Lever Pull & Plate Slide & Plate Slide Back & Plate Slide Back Side & Plate Slide Side & Reach\\
+\midrule
+
+Expert & \cc{100.0} & \cc{100.0} & \cc{98.5} & \cc{100.0} & \cc{100.0} & \cc{100.0} & \cc{100.0} & \cc{100.0}\\
+\bottomrule
+\end{tabular}}
+
+
+
+
+\resizebox{0.9\textwidth}{!}{%
+\begin{tabular}{l|cccc|ccccccc}
+\toprule
+& \multicolumn{4}{c|}{\textbf{Meta-World (Easy)}} & \multicolumn{5}{c}{\textbf{Meta-World (Medium)}} \\
+
+ Alg $\backslash$ Task & Reach Wall & Window Close & Window Open & Peg Unplug Side & Basketball & Bin Picking & Box Close & Coffee Pull & Coffee Push\\
+\midrule
+
+
+ Expert & \cc{100.0} & \cc{100.0} & \cc{100.0} & \cc{99.0} &\cc{100.0} & \cc{97.0} & \cc{90.0} & \cc{100.0} & \cc{100.0}\\
+\bottomrule
+\end{tabular}}
+
+
+
+
+
+
+\resizebox{0.9\textwidth}{!}{%
+\begin{tabular}{l|cccccc|ccccc}
+\toprule
+& \multicolumn{6}{c|}{\textbf{Meta-World (Medium)}} & \multicolumn{4}{c}{\textbf{Meta-World (Hard)}} \\
+
+ Alg $\backslash$ Task & Hammer & Peg Insert Side & Push Wall & Soccer & Sweep & Sweep Into & Assembly & Hand Insert & Pick Out of Hole & Pick Place\\
+\midrule
+
+
+
+Expert & \cc{100.0} & \cc{92.0} & \cc{100.0} & \cc{90.5} &\cc{100.0} & \cc{90.0} & \cc{100.0} & \cc{100.0} & \cc{100.0} & \cc{100.0}\\
+\bottomrule
+\end{tabular}}
+
+\resizebox{0.7\textwidth}{!}{%
+\begin{tabular}{l|cc|cccccccccccc}
+\toprule
+& \multicolumn{2}{c|}{\textbf{Meta-World (Hard)}} & \multicolumn{5}{c}{\textbf{Meta-World (Very Hard)}}  
+
+
+ % \multicolumn{2}{c}{\multirow{2}{*}{\textbf{Average}}}
+  \\
+
+ Alg $\backslash$ Task & Push & Push Back & Shelf Place & Disassemble & Stick Pull & Stick Push & Pick Place Wall  \\
+\midrule
+
+
+ Expert & \cc{100.0} & \cc{0.0} & \cc{99.5} & \cc{92.5} & \cc{95.0} & \cc{100.0} & \cc{99.5}\\
+\bottomrule
+\end{tabular}}
+\end{flushleft}
+
+
+\end{table*}
+
+
+
+
+

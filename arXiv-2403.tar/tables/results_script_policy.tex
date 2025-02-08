@@ -1,0 +1,107 @@
+\begin{table*}[htbp]
+\centering
+\caption{\textbf{Results on MetaWorld tasks with script policies.} We generate demonstrations with script policies and train \ours and Diffusion Policy on them.}
+\label{table: simulation results with script policy}
+
+
+\resizebox{1.0\textwidth}{!}{%
+\begin{tabular}{l|cccccccc}
+\toprule
+& \multicolumn{7}{c}{\textbf{Meta-World~\citep{yu2020metaworld} (Easy)}} \\
+
+ Alg $\backslash$ Task & Button Press & Button Press Topdown & Button Press Topdown Wall & Button Press Wall & Coffee Button & Dial Turn & Door Close \\
+\midrule
+
+ Diffusion Policy & \dd{84}{8} & \dd{85}{4} & \dd{91}{6} & \ddbf{100}{0} & \ddbf{100}{0} & \dd{29}{28} & \ddbf{100}{0}\\
+\ours & \ddbf{100}{0} & \ddbf{100}{0} & \ddbf{99}{2} & \ddbf{100}{0} & \ddbf{100}{0} & \ddbf{92}{0} & \ddbf{100}{0}\\
+\bottomrule
+\end{tabular}}
+
+
+
+\resizebox{1.0\textwidth}{!}{%
+\begin{tabular}{l|ccccccccccc}
+\toprule
+& \multicolumn{9}{c}{\textbf{Meta-World (Easy)}} \\
+
+ Alg $\backslash$ Task & Door Lock & Door Open & Door Unlock & Drawer Close & Drawer Open & Faucet Close & Faucet Open & Handle Press & Handle Pull\\
+\midrule
+Diffusion Policy & \dd{17}{6} &\dd{81}{23} & \dd{83}{7} & \dd{99}{1} & \dd{48}{32} & \dd{1}{1} & \ddbf{100}{1} & \dd{99}{1} & \dd{4}{8}\\
+ \ours & \ddbf{100}{0} & \ddbf{100}{0} & \ddbf{100}{0} & \ddbf{100}{0} &\ddbf{100}{0} & \ddbf{92}{4} & \ddbf{100}{0} & \ddbf{100}{0} & \ddbf{55}{17}\\
+\bottomrule
+\end{tabular}}
+
+
+\resizebox{1.0\textwidth}{!}{%
+\begin{tabular}{l|ccccccccccc}
+\toprule
+& \multicolumn{8}{c}{\textbf{Meta-World (Easy)}} \\
+
+ Alg $\backslash$ Task & Handle Press Side & Handle Pull Side & Lever Pull & Plate Slide & Plate Slide Back & Plate Slide Back Side & Plate Slide Side & Reach\\
+\midrule
+
+ Diffusion Policy & \ddbf{100}{0} & \dd{0}{0} & \dd{11}{6} & \dd{52}{13} & \dd{4}{8} & \dd{93}{12} & \ddbf{100}{0} & \ddbf{28}{3} \\
+ \ours & \ddbf{100}{0} & \ddbf{57}{6} & \ddbf{90}{4} & \ddbf{99}{0} & \ddbf{100}{0} & \ddbf{100}{0} & \ddbf{100}{0} & \dd{25}{1}\\
+\bottomrule
+\end{tabular}}
+
+
+
+
+\resizebox{1.0\textwidth}{!}{%
+\begin{tabular}{l|cccc|ccccccc}
+\toprule
+& \multicolumn{4}{c|}{\textbf{Meta-World (Easy)}} & \multicolumn{5}{c}{\textbf{Meta-World (Medium)}} \\
+
+ Alg $\backslash$ Task & Reach Wall & Window Close & Window Open & Peg Unplug Side & Basketball & Bin Picking & Box Close & Coffee Pull & Coffee Push\\
+\midrule
+
+Diffusion Policy & \ddbf{78}{4} & \dd{73}{14} & \dd{44}{16} & \dd{29}{21} & \dd{7}{12} & \ddbf{73}{8} & \dd{1}{1} & \dd{43}{4} & \dd{12}{17}\\
+ \ours & \dd{69}{2} & \ddbf{100}{0} & \ddbf{100}{0} & \ddbf{62}{4} & \ddbf{100}{0} & \dd{54}{27} & \ddbf{76}{4} & \ddbf{75}{8} & \ddbf{91}{5}\\
+\bottomrule
+\end{tabular}}
+
+
+
+
+
+
+\resizebox{1.0\textwidth}{!}{%
+\begin{tabular}{l|cccccc|ccccc}
+\toprule
+& \multicolumn{6}{c|}{\textbf{Meta-World (Medium)}} & \multicolumn{4}{c}{\textbf{Meta-World (Hard)}} \\
+
+ Alg $\backslash$ Task & Hammer & Peg Insert Side & Push Wall & Soccer & Sweep & Sweep Into & Assembly & Hand Insert & Pick Out of Hole & Pick Place\\
+\midrule
+
+Diffusion Policy & \dd{62}{13} & \dd{18}{15} & \dd{25}{4} & \dd{15}{4} & \dd{11}{1} & \dd{25}{2} & \dd{3}{5} & \dd{15}{6} &\dd{5}{4} & \dd{3}{4}\\
+ \ours & \ddbf{98}{3} & \ddbf{82}{8} & \ddbf{84}{4} & \ddbf{28}{3} & \ddbf{93}{6} & \ddbf{68}{7} &\ddbf{93}{4} & \ddbf{25}{13} & \ddbf{37}{5} & \ddbf{34}{6}\\
+\bottomrule
+\end{tabular}}
+
+
+\resizebox{1.0\textwidth}{!}{%
+\begin{tabular}{l|cc|ccccc|ccccccc}
+\toprule
+& \multicolumn{2}{c|}{\textbf{Meta-World (Hard)}} & \multicolumn{5}{c|}{\textbf{Meta-World (Very Hard)}} & 
+ \multicolumn{3}{c}{\multirow{2}{*}{\textbf{Average}}}
+ 
+ 
+ & \\
+
+ Alg $\backslash$ Task & Push & Push Back & Shelf Place & Disassemble & Stick Pull & Stick Push & Pick Place Wall &  \\
+\midrule
+
+Diffusion Policy & \dd{14}{9} & \ddbf{0}{0} & \ddbf{25}{22} &\dd{0}{0} & \dd{0}{0} & \dd{85}{22} & \dd{23}{14} & \multicolumn{3}{c}{$45.0$}\\
+ \ours & \ddbf{58}{8} & \ddbf{0}{0} & \dd{20}{4} &\ddbf{63}{7} &\ddbf{90}{4} & \ddbf{100}{0} &\ddbf{87}{8} & \multicolumn{3}{c}{$79.9$ ($\uparrow \mathbf{77.6}\%$)}\\
+\bottomrule
+\end{tabular}}
+
+
+
+\end{table*}
+
+
+
+
+

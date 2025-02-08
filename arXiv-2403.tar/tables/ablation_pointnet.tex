@@ -1,0 +1,93 @@
+\begin{table}[htbp]
+\centering
+% \vspace{-0.2in}
+\caption{\textbf{Gradually modifying a PointNet to a DP3-style encoder.} Conv: use convolutional layers or linear layers. w/ T-Net: with or without T-Net. w/ BN: with or without BacthNorm layers. 1024 Dim: set feature dimensions before the projection layer to be 1024 or 256. Average success rates for 6 ablation tasks are reported.}
+\label{table: modify PointNet}
+\vspace{-0.05in}
+
+% \resizebox{0.49\textwidth}{!}{%
+% \begin{tabular}{l|cccccc|ccc}
+% \toprule
+
+
+
+%   Encoders & H & D  & P & A & DA & SP & \textbf{Average} \\
+
+
+% \midrule
+
+
+
+% PointNet & \dd{46}{8} & \dd{34}{8} & \dd{14}{4} & \dd{0}{0} & \dd{0}{0} & \dd{0}{0} & \\
+
+% ~Linear & \dd{45}{6}& \dd{37}{5}& \dd{12}{2} & \dd{0}{0} & \dd{0}{0} & \dd{0}{0} & $15.7$\\
+
+% ~Linear + D256 & \dd{47}{2} & \dd{45}{4}& \dd{16}{5}& \dd{0}{0} & \dd{0}{0} & \dd{1}{2} & $18.2$ \\
+
+% ~w/o T & \dd{47}{3} & \dd{14}{6} & \dd{13}{2} & \dd{0}{0} & \dd{0}{0} & \dd{22}{21} & $16.0$ \\
+
+% ~Linear + D256 + w/o BN & \dd{56}{4} & \dd{33}{3}& \dd{10}{3} & \dd{0}{0}& \dd{0}{0}& \dd{62}{9} & $26.8$\\
+
+% ~Linear + w/o T & \dd{47}{8} & \dd{19}{6} & \dd{15}{4} & \dd{0}{0} & \dd{0}{0} & \dd{23}{20} & $26.0$ \\
+
+% ~w/o T + Linear + D256 & \dd{49}{3} & \dd{16}{3} & \dd{14}{12} & \dd{0}{0}& \dd{0}{0}& \dd{0}{0}& $19.8$\\
+
+% ~w/o BN + w/o T & \dd{100}{0} & \dd{50}{2} & \dd{44}{2} &  \dd{96}{3} & \dd{53}{10} & \dd{92}{2} & $72.5$ \\
+
+% ~Linear + w/o BN + w/o T & \dd{100}{0}& \dd{50}{6}& \dd{43}{6}& \dd{97}{3}  & \dd{58}{13} & \dd{92}{2} & $73.3$ \\
+
+% ~{Linear + D256 + w/o BN + w/o T} & \dd{100}{0}& \dd{56}{3}& \dd{41}{1}& \dd{95}{0} & \dd{50}{3} &\dd{92}{2} & $72.3$  \\
+
+% \textbf{DP3 Encoder} & \dd{100}{0} & \dd{62}{4} & \dd{43}{6} & \\
+
+
+% \bottomrule
+% \end{tabular}}
+
+
+\resizebox{0.48\textwidth}{!}{%
+\begin{tabular}{c|cccc|ccccc}
+\toprule
+
+
+
+  Encoders & Conv& w/ T-Net & w/ BN & 1024 Dim& \textbf{Average} \\
+  \midrule
+PointNet & \textcolor{ggreen}{\Checkmark} & \textcolor{ggreen}{\Checkmark} & \textcolor{ggreen}{\Checkmark} & \textcolor{ggreen}{\Checkmark} & $15.7$ \\
+
+ & \textcolor{gred}{\XSolidBrush} & \textcolor{ggreen}{\Checkmark} & \textcolor{ggreen}{\Checkmark} & \textcolor{ggreen}{\Checkmark} & $15.7$ \\
+
+ & \textcolor{ggreen}{\Checkmark} & \textcolor{gred}{\XSolidBrush} & \textcolor{ggreen}{\Checkmark} & \textcolor{ggreen}{\Checkmark} &  $16.0$\\
+
+
+  & \textcolor{gred}{\XSolidBrush} & \textcolor{gred}{\XSolidBrush}  & \textcolor{ggreen}{\Checkmark} & \textcolor{ggreen}{\Checkmark} & $26.0$ \\
+
+
+     
+
+
+& \textcolor{gred}{\XSolidBrush} & \textcolor{ggreen}{\Checkmark} & \textcolor{ggreen}{\Checkmark} & \textcolor{gred}{\XSolidBrush} & $18.2$\\
+
+  Turnaroud! & \textcolor{ggreen}{\Checkmark}  & \textcolor{gred}{\XSolidBrush} & 
+    \textcolor{gred}{\XSolidBrush} &\textcolor{ggreen}{\Checkmark} &  $\mathbf{72.5}$ \\
+
+
+
+  & \textcolor{gred}{\XSolidBrush} & \textcolor{gred}{\XSolidBrush}  & \textcolor{ggreen}{\Checkmark} & \textcolor{gred}{\XSolidBrush} & $19.8$\\
+
+
+& \textcolor{gred}{\XSolidBrush} & \textcolor{ggreen}{\Checkmark} & \textcolor{gred}{\XSolidBrush} & \textcolor{gred}{\XSolidBrush} & $26.8$\\
+
+
+
+
+
+    
+    & \textcolor{gred}{\XSolidBrush} & \textcolor{gred}{\XSolidBrush}  & \textcolor{gred}{\XSolidBrush} & \textcolor{gred}{\XSolidBrush} & $\mathbf{72.3}$\\
+
+
+\bottomrule
+\end{tabular}}
+\vspace{-0.1in}
+\end{table}
+

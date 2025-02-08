@@ -1,0 +1,435 @@
+\begin{thebibliography}{85}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Agarwal et~al.(2023)Agarwal, Uppal, Shaw, and Pathak]{agarwal2023functional}
+Ananye Agarwal, Shagun Uppal, Kenneth Shaw, and Deepak Pathak.
+\newblock Dexterous functional grasping.
+\newblock In \emph{CoRL}, 2023.
+
+\bibitem[Ajay et~al.(2022)Ajay, Du, Gupta, Tenenbaum, Jaakkola, and Agrawal]{ajay2022conditional_generative_modeling}
+Anurag Ajay, Yilun Du, Abhi Gupta, Joshua Tenenbaum, Tommi Jaakkola, and Pulkit Agrawal.
+\newblock Is conditional generative modeling all you need for decision-making?
+\newblock \emph{arXiv preprint arXiv:2211.15657}, 2022.
+
+\bibitem[Arunachalam et~al.(2023)Arunachalam, Silwal, Evans, and Pinto]{arunachalam2023dime}
+Sridhar~Pandian Arunachalam, Sneha Silwal, Ben Evans, and Lerrel Pinto.
+\newblock Dexterous imitation made easy: A learning-based framework for efficient dexterous manipulation.
+\newblock In \emph{ICRA}, 2023.
+
+\bibitem[Ba et~al.(2016)Ba, Kiros, and Hinton]{ba2016layer_norm}
+Jimmy~Lei Ba, Jamie~Ryan Kiros, and Geoffrey~E Hinton.
+\newblock Layer normalization.
+\newblock \emph{arXiv}, 2016.
+
+\bibitem[Bao et~al.(2023)Bao, Xu, Qin, and Wang]{bao2023dexart}
+Chen Bao, Helin Xu, Yuzhe Qin, and Xiaolong Wang.
+\newblock Dexart: Benchmarking generalizable dexterous manipulation with articulated objects.
+\newblock In \emph{CVPR}, 2023.
+
+\bibitem[Chen et~al.(2022{\natexlab{a}})Chen, Xu, and Agrawal]{chen2022system}
+Tao Chen, Jie Xu, and Pulkit Agrawal.
+\newblock A system for general in-hand object re-orientation.
+\newblock In \emph{CoRL}, 2022{\natexlab{a}}.
+
+\bibitem[Chen et~al.(2023{\natexlab{a}})Chen, Tippur, Wu, Kumar, Adelson, and Agrawal]{chen2023visual_dex}
+Tao Chen, Megha Tippur, Siyang Wu, Vikash Kumar, Edward Adelson, and Pulkit Agrawal.
+\newblock Visual dexterity: In-hand reorientation of novel and complex object shapes.
+\newblock \emph{Science Robotics}, 8\penalty0 (84):\penalty0 eadc9244, 2023{\natexlab{a}}.
+\newblock \doi{10.1126/scirobotics.adc9244}.
+
+\bibitem[Chen et~al.(2022{\natexlab{b}})Chen, Wu, Wang, Feng, Jiang, Lu, McAleer, Dong, Zhu, and Yang]{chen2022bidexhands}
+Yuanpei Chen, Tianhao Wu, Shengjie Wang, Xidong Feng, Jiechuan Jiang, Zongqing Lu, Stephen McAleer, Hao Dong, Song-Chun Zhu, and Yaodong Yang.
+\newblock Towards human-level bimanual dexterous manipulation with reinforcement learning.
+\newblock \emph{NeurIPS}, 2022{\natexlab{b}}.
+
+\bibitem[Chen et~al.(2023{\natexlab{b}})Chen, Wang, Fei-Fei, and Liu]{chen2023sequential}
+Yuanpei Chen, Chen Wang, Li~Fei-Fei, and C~Karen Liu.
+\newblock Sequential dexterity: Chaining dexterous policies for long-horizon manipulation.
+\newblock \emph{CoRL}, 2023{\natexlab{b}}.
+
+\bibitem[Chi et~al.(2023)Chi, Feng, Du, Xu, Cousineau, Burchfiel, and Song]{chi2023diffusion_policy}
+Cheng Chi, Siyuan Feng, Yilun Du, Zhenjia Xu, Eric Cousineau, Benjamin Burchfiel, and Shuran Song.
+\newblock Diffusion policy: Visuomotor policy learning via action diffusion.
+\newblock \emph{RSS}, 2023.
+
+\bibitem[Florence et~al.(2022)Florence, Lynch, Zeng, Ramirez, Wahid, Downs, Wong, Lee, Mordatch, and Tompson]{florence2022ibc}
+Pete Florence, Corey Lynch, Andy Zeng, Oscar~A Ramirez, Ayzaan Wahid, Laura Downs, Adrian Wong, Johnny Lee, Igor Mordatch, and Jonathan Tompson.
+\newblock Implicit behavioral cloning.
+\newblock In \emph{CoRL}, 2022.
+
+\bibitem[Fu et~al.(2024)Fu, Zhao, and Finn]{fu2024mobile}
+Zipeng Fu, Tony~Z. Zhao, and Chelsea Finn.
+\newblock Mobile aloha: Learning bimanual mobile manipulation with low-cost whole-body teleoperation.
+\newblock In \emph{arXiv}, 2024.
+
+\bibitem[Gervet et~al.(2023)Gervet, Xian, Gkanatsios, and Fragkiadaki]{gervet2023act3d}
+Theophile Gervet, Zhou Xian, Nikolaos Gkanatsios, and Katerina Fragkiadaki.
+\newblock Act3d: Infinite resolution action detection transformer for robotic manipulation.
+\newblock \emph{arXiv preprint arXiv:2306.17817}, 2023.
+
+\bibitem[Goyal et~al.(2023)Goyal, Xu, Guo, Blukis, Chao, and Fox]{goyal2023rvt}
+Ankit Goyal, Jie Xu, Yijie Guo, Valts Blukis, Yu-Wei Chao, and Dieter Fox.
+\newblock Rvt: Robotic view transformer for 3d object manipulation.
+\newblock \emph{arXiv}, 2023.
+
+\bibitem[Ha et~al.(2023)Ha, Florence, and Song]{ha2023scaling}
+Huy Ha, Pete Florence, and Shuran Song.
+\newblock Scaling up and distilling down: Language-guided robot skill acquisition.
+\newblock In \emph{Conference on Robot Learning}. PMLR, 2023.
+
+\bibitem[Haldar et~al.(2023)Haldar, Pari, Rai, and Pinto]{haldar2023fish}
+Siddhant Haldar, Jyothish Pari, Anant Rai, and Lerrel Pinto.
+\newblock Teach a robot to fish: Versatile imitation from one minute of demonstrations.
+\newblock \emph{RSS}, 2023.
+
+\bibitem[Handa et~al.(2020)Handa, Van~Wyk, Yang, Liang, Chao, Wan, Birchfield, Ratliff, and Fox]{handa2020dexpilot}
+Ankur Handa, Karl Van~Wyk, Wei Yang, Jacky Liang, Yu-Wei Chao, Qian Wan, Stan Birchfield, Nathan Ratliff, and Dieter Fox.
+\newblock Dexpilot: Vision-based teleoperation of dexterous robotic hand-arm system.
+\newblock In \emph{2020 IEEE International Conference on Robotics and Automation (ICRA)}. IEEE, 2020.
+
+\bibitem[Handa et~al.(2023)Handa, Allshire, Makoviychuk, Petrenko, Singh, Liu, Makoviichuk, Van~Wyk, Zhurkevich, Sundaralingam, et~al.]{handa2023dextreme}
+Ankur Handa, Arthur Allshire, Viktor Makoviychuk, Aleksei Petrenko, Ritvik Singh, Jingzhou Liu, Denys Makoviichuk, Karl Van~Wyk, Alexander Zhurkevich, Balakumar Sundaralingam, et~al.
+\newblock Dextreme: Transfer of agile in-hand manipulation from simulation to reality.
+\newblock In \emph{ICRA}, 2023.
+
+\bibitem[Hansen et~al.(2021)Hansen, Su, and Wang]{hansen2021svea}
+Nicklas Hansen, Hao Su, and Xiaolong Wang.
+\newblock Stabilizing deep q-learning with convnets and vision transformers under data augmentation.
+\newblock \emph{Advances in neural information processing systems}, 2021.
+
+\bibitem[Hansen et~al.(2022)Hansen, Yuan, Ze, Mu, Rajeswaran, Su, Xu, and Wang]{hansen2022lfs}
+Nicklas Hansen, Zhecheng Yuan, Yanjie Ze, Tongzhou Mu, Aravind Rajeswaran, Hao Su, Huazhe Xu, and Xiaolong Wang.
+\newblock On pre-training for visuo-motor control: Revisiting a learning-from-scratch baseline.
+\newblock In \emph{International Conference on Machine Learning (ICML)}, 2022.
+
+\bibitem[Hansen et~al.(2023{\natexlab{a}})Hansen, Lin, Su, Wang, Kumar, and Rajeswaran]{hansen2023modem}
+Nicklas Hansen, Yixin Lin, Hao Su, Xiaolong Wang, Vikash Kumar, and Aravind Rajeswaran.
+\newblock Modem: Accelerating visual model-based reinforcement learning with demonstrations.
+\newblock In \emph{ICLR}, 2023{\natexlab{a}}.
+
+\bibitem[Hansen et~al.(2023{\natexlab{b}})Hansen, Su, and Wang]{hansen2023tdmpc2}
+Nicklas Hansen, Hao Su, and Xiaolong Wang.
+\newblock Td-mpc2: Scalable, robust world models for continuous control.
+\newblock \emph{arXiv}, 2023{\natexlab{b}}.
+
+\bibitem[Ho et~al.(2020)Ho, Jain, and Abbeel]{ho2020ddpm}
+Jonathan Ho, Ajay Jain, and Pieter Abbeel.
+\newblock Denoising diffusion probabilistic models.
+\newblock \emph{NeurIPS}, 2020.
+
+\bibitem[Huang et~al.(2023{\natexlab{a}})Huang, Chen, Wang, Qin, Yang, Atanasov, and Wang]{huang2023dynamic_handover}
+Binghao Huang, Yuanpei Chen, Tianyu Wang, Yuzhe Qin, Yaodong Yang, Nikolay Atanasov, and Xiaolong Wang.
+\newblock Dynamic handover: Throw and catch with bimanual hands.
+\newblock \emph{CoRL}, 2023{\natexlab{a}}.
+
+\bibitem[Huang et~al.(2023{\natexlab{b}})Huang, Jiang, Ze, and Xu]{Huang2023DiffusionReward}
+Tao Huang, Guangqi Jiang, Yanjie Ze, and Huazhe Xu.
+\newblock Diffusion reward: Learning rewards via conditional video diffusion.
+\newblock \emph{arXiv}, 2023{\natexlab{b}}.
+
+\bibitem[Huang et~al.(2021)Huang, Hu, Du, Zhou, Su, Tenenbaum, and Gan]{huang2021plasticinelab}
+Zhiao Huang, Yuanming Hu, Tao Du, Siyuan Zhou, Hao Su, Joshua~B Tenenbaum, and Chuang Gan.
+\newblock Plasticinelab: A soft-body manipulation benchmark with differentiable physics.
+\newblock \emph{arXiv}, 2021.
+
+\bibitem[Janner et~al.(2022)Janner, Du, Tenenbaum, and Levine]{janner2022diffusion_planning}
+Michael Janner, Yilun Du, Joshua~B Tenenbaum, and Sergey Levine.
+\newblock Planning with diffusion for flexible behavior synthesis.
+\newblock \emph{arXiv}, 2022.
+
+\bibitem[Ke et~al.(2024)Ke, Gkanatsios, and Fragkiadaki]{3d_diffuser_actor}
+Tsung-Wei Ke, Nikolaos Gkanatsios, and Katerina Fragkiadaki.
+\newblock 3d diffuser actor: Policy diffusion with 3d scene representations.
+\newblock \emph{Arxiv}, 2024.
+
+\bibitem[Kerbl et~al.(2023)Kerbl, Kopanas, Leimk{\"u}hler, and Drettakis]{kerbl2023gaussian_splat}
+Bernhard Kerbl, Georgios Kopanas, Thomas Leimk{\"u}hler, and George Drettakis.
+\newblock 3d gaussian splatting for real-time radiance field rendering.
+\newblock \emph{ACM Transactions on Graphics}, 2023.
+
+\bibitem[Lei et~al.(2023)Lei, He, Lu, Hu, Gao, and Xu]{lei2023uni_o4}
+Kun Lei, Zhengmao He, Chenhao Lu, Kaizhe Hu, Yang Gao, and Huazhe Xu.
+\newblock Uni-o4: Unifying online and offline deep reinforcement learning with multi-step on-policy optimization.
+\newblock \emph{arXiv}, 2023.
+
+\bibitem[Li et~al.(2023)Li, Huang, Chen, Du, Su, Tenenbaum, and Gan]{li2023dexdeform}
+Sizhe Li, Zhiao Huang, Tao Chen, Tao Du, Hao Su, Joshua~B Tenenbaum, and Chuang Gan.
+\newblock Dexdeform: Dexterous deformable object manipulation with human demonstrations and differentiable physics.
+\newblock \emph{arXiv}, 2023.
+
+\bibitem[Lu et~al.(2022)Lu, Zhou, Bao, Chen, Li, and Zhu]{lu2022dpm_solver}
+Cheng Lu, Yuhao Zhou, Fan Bao, Jianfei Chen, Chongxuan Li, and Jun Zhu.
+\newblock Dpm-solver++: Fast solver for guided sampling of diffusion probabilistic models.
+\newblock \emph{arXiv}, 2022.
+
+\bibitem[Ma et~al.(2023)Ma, Liang, Wang, Huang, Bastani, Jayaraman, Zhu, Fan, and Anandkumar]{ma2023eureka}
+Yecheng~Jason Ma, William Liang, Guanzhi Wang, De-An Huang, Osbert Bastani, Dinesh Jayaraman, Yuke Zhu, Linxi Fan, and Anima Anandkumar.
+\newblock Eureka: Human-level reward design via coding large language models.
+\newblock \emph{arXiv}, 2023.
+
+\bibitem[Makoviychuk et~al.(2021)Makoviychuk, Wawrzyniak, Guo, Lu, Storey, Macklin, Hoeller, Rudin, Allshire, Handa, et~al.]{makoviychuk2021isaac}
+Viktor Makoviychuk, Lukasz Wawrzyniak, Yunrong Guo, Michelle Lu, Kier Storey, Miles Macklin, David Hoeller, Nikita Rudin, Arthur Allshire, Ankur Handa, et~al.
+\newblock Isaac gym: High performance gpu-based physics simulation for robot learning.
+\newblock \emph{arXiv}, 2021.
+
+\bibitem[Mandlekar et~al.(2021)Mandlekar, Xu, Wong, Nasiriany, Wang, Kulkarni, Fei-Fei, Savarese, Zhu, and Mart{\'\i}n-Mart{\'\i}n]{mandlekar2021robomimic}
+Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang, Rohun Kulkarni, Li~Fei-Fei, Silvio Savarese, Yuke Zhu, and Roberto Mart{\'\i}n-Mart{\'\i}n.
+\newblock What matters in learning from offline human demonstrations for robot manipulation.
+\newblock \emph{arXiv}, 2021.
+
+\bibitem[Mildenhall et~al.(2021)Mildenhall, Srinivasan, Tancik, Barron, Ramamoorthi, and Ng]{mildenhall2021nerf}
+Ben Mildenhall, Pratul~P Srinivasan, Matthew Tancik, Jonathan~T Barron, Ravi Ramamoorthi, and Ren Ng.
+\newblock Nerf: Representing scenes as neural radiance fields for view synthesis.
+\newblock \emph{Communications of the ACM}, 2021.
+
+\bibitem[Nuti et~al.(2023)Nuti, Franzmeyer, and Henriques]{nuti2023extracting}
+Felipe Nuti, Tim Franzmeyer, and Jo{\~a}o~F Henriques.
+\newblock Extracting reward functions from diffusion models.
+\newblock \emph{arXiv preprint arXiv:2306.01804}, 2023.
+
+\bibitem[Pari et~al.(2021)Pari, Shafiullah, Arunachalam, and Pinto]{pari2021VINN}
+Jyothish Pari, Nur~Muhammad Shafiullah, Sridhar~Pandian Arunachalam, and Lerrel Pinto.
+\newblock The surprising effectiveness of representation learning for visual imitation.
+\newblock \emph{arXiv preprint arXiv:2112.01511}, 2021.
+
+\bibitem[Pearce et~al.(2023)Pearce, Rashid, Kanervisto, Bignell, Sun, Georgescu, Macua, Tan, Momennejad, Hofmann, et~al.]{pearce2023imitating_diffusion}
+Tim Pearce, Tabish Rashid, Anssi Kanervisto, Dave Bignell, Mingfei Sun, Raluca Georgescu, Sergio~Valcarcel Macua, Shan~Zheng Tan, Ida Momennejad, Katja Hofmann, et~al.
+\newblock Imitating human behaviour with diffusion models.
+\newblock \emph{ICLR}, 2023.
+
+\bibitem[Peng et~al.(2020)Peng, Coumans, Zhang, Lee, Tan, and Levine]{peng2020imitating_animal}
+Xue~Bin Peng, Erwin Coumans, Tingnan Zhang, Tsang-Wei Lee, Jie Tan, and Sergey Levine.
+\newblock Learning agile robotic locomotion skills by imitating animals.
+\newblock \emph{arXiv}, 2020.
+
+\bibitem[Prasad et~al.(2024)Prasad, Lin, Wu, Zhou, and Bohg]{prasad2024consistency}
+Aaditya Prasad, Kevin Lin, Jimmy Wu, Linqi Zhou, and Jeannette Bohg.
+\newblock Consistency policy: Accelerated visuomotor policies via consistency distillation.
+\newblock In \emph{Robotics: Science and Systems}, 2024.
+
+\bibitem[Qi et~al.(2017{\natexlab{a}})Qi, Su, Mo, and Guibas]{qi2017pointnet}
+Charles~R Qi, Hao Su, Kaichun Mo, and Leonidas~J Guibas.
+\newblock Pointnet: Deep learning on point sets for 3d classification and segmentation.
+\newblock In \emph{CVPR}, 2017{\natexlab{a}}.
+
+\bibitem[Qi et~al.(2017{\natexlab{b}})Qi, Yi, Su, and Guibas]{qi2017pointnet++}
+Charles~Ruizhongtai Qi, Li~Yi, Hao Su, and Leonidas~J Guibas.
+\newblock Pointnet++: Deep hierarchical feature learning on point sets in a metric space.
+\newblock \emph{NeurIPS}, 2017{\natexlab{b}}.
+
+\bibitem[Qi et~al.(2023{\natexlab{a}})Qi, Kumar, Calandra, Ma, and Malik]{qi2023hora}
+Haozhi Qi, Ashish Kumar, Roberto Calandra, Yi~Ma, and Jitendra Malik.
+\newblock In-hand object rotation via rapid motor adaptation.
+\newblock In \emph{CoRL}, 2023{\natexlab{a}}.
+
+\bibitem[Qi et~al.(2023{\natexlab{b}})Qi, Yi, Suresh, Lambeta, Ma, Calandra, and Malik]{qi2023general_hora}
+Haozhi Qi, Brent Yi, Sudharshan Suresh, Mike Lambeta, Yi~Ma, Roberto Calandra, and Jitendra Malik.
+\newblock General in-hand object rotation with vision and touch.
+\newblock In \emph{CoRL}, 2023{\natexlab{b}}.
+
+\bibitem[Qian et~al.(2022)Qian, Li, Peng, Mai, Hammoud, Elhoseiny, and Ghanem]{qian2022pointnext}
+Guocheng Qian, Yuchen Li, Houwen Peng, Jinjie Mai, Hasan Hammoud, Mohamed Elhoseiny, and Bernard Ghanem.
+\newblock Pointnext: Revisiting pointnet++ with improved training and scaling strategies.
+\newblock \emph{NeurIPS}, 2022.
+
+\bibitem[Qin et~al.(2022)Qin, Wu, Liu, Jiang, Yang, Fu, and Wang]{qin2022dexmv}
+Yuzhe Qin, Yueh-Hua Wu, Shaowei Liu, Hanwen Jiang, Ruihan Yang, Yang Fu, and Xiaolong Wang.
+\newblock Dexmv: Imitation learning for dexterous manipulation from human videos.
+\newblock In \emph{ECCV}, 2022.
+
+\bibitem[Qin et~al.(2023)Qin, Yang, Huang, Van~Wyk, Su, Wang, Chao, and Fox]{qin2023anyteleop}
+Yuzhe Qin, Wei Yang, Binghao Huang, Karl Van~Wyk, Hao Su, Xiaolong Wang, Yu-Wei Chao, and Dietor Fox.
+\newblock Anyteleop: A general vision-based dexterous robot arm-hand teleoperation system.
+\newblock \emph{arXiv preprint arXiv:2307.04577}, 2023.
+
+\bibitem[Rajeswaran et~al.(2017)Rajeswaran, Kumar, Gupta, Vezzani, Schulman, Todorov, and Levine]{rajeswaran2017dapg}
+Aravind Rajeswaran, Vikash Kumar, Abhishek Gupta, Giulia Vezzani, John Schulman, Emanuel Todorov, and Sergey Levine.
+\newblock Learning complex dexterous manipulation with deep reinforcement learning and demonstrations.
+\newblock \emph{arXiv}, 2017.
+
+\bibitem[Reuss et~al.(2023)Reuss, Li, Jia, and Lioutikov]{reuss2023goal}
+Moritz Reuss, Maximilian Li, Xiaogang Jia, and Rudolf Lioutikov.
+\newblock Goal-conditioned imitation learning using score-based diffusion policies.
+\newblock \emph{arXiv preprint arXiv:2304.02532}, 2023.
+
+\bibitem[Rombach et~al.(2022)Rombach, Blattmann, Lorenz, Esser, and Ommer]{rombach2022stable_diffusion}
+Robin Rombach, Andreas Blattmann, Dominik Lorenz, Patrick Esser, and Bj{\"o}rn Ommer.
+\newblock High-resolution image synthesis with latent diffusion models.
+\newblock In \emph{Proceedings of the IEEE/CVF conference on computer vision and pattern recognition}, 2022.
+
+\bibitem[Saha et~al.(2023)Saha, Mandadi, Reddy, Srikanth, Agarwal, Sen, Singh, and Krishna]{saha2023edmp}
+Kallol Saha, Vishal Mandadi, Jayaram Reddy, Ajit Srikanth, Aditya Agarwal, Bipasha Sen, Arun Singh, and Madhava Krishna.
+\newblock Edmp: Ensemble-of-costs-guided diffusion for motion planning.
+\newblock \emph{arXiv}, 2023.
+
+\bibitem[Schulman et~al.(2017)Schulman, Wolski, Dhariwal, Radford, and Klimov]{schulman2017ppo}
+John Schulman, Filip Wolski, Prafulla Dhariwal, Alec Radford, and Oleg Klimov.
+\newblock Proximal policy optimization algorithms.
+\newblock \emph{arXiv preprint arXiv:1707.06347}, 2017.
+
+\bibitem[Seo et~al.(2023{\natexlab{a}})Seo, Han, Sim, Bang, Gonzalez, Sentis, and Zhu]{seo2023humanoid}
+Mingyo Seo, Steve Han, Kyutae Sim, Seung~Hyeon Bang, Carlos Gonzalez, Luis Sentis, and Yuke Zhu.
+\newblock Deep imitation learning for humanoid loco-manipulation through human teleoperation.
+\newblock \emph{Humanoids}, 2023{\natexlab{a}}.
+
+\bibitem[Seo et~al.(2023{\natexlab{b}})Seo, Hafner, Liu, Liu, James, Lee, and Abbeel]{seo2023mwm}
+Younggyo Seo, Danijar Hafner, Hao Liu, Fangchen Liu, Stephen James, Kimin Lee, and Pieter Abbeel.
+\newblock Masked world models for visual control.
+\newblock In \emph{CoRL}, 2023{\natexlab{b}}.
+
+\bibitem[Shafiullah et~al.(2022)Shafiullah, Cui, Altanzaya, and Pinto]{shafiullah2022bet}
+Nur~Muhammad Shafiullah, Zichen Cui, Ariuntuya~Arty Altanzaya, and Lerrel Pinto.
+\newblock Behavior transformers: Cloning $ k $ modes with one stone.
+\newblock \emph{Advances in neural information processing systems}, 2022.
+
+\bibitem[Shafiullah et~al.(2023)Shafiullah, Rai, Etukuru, Liu, Misra, Chintala, and Pinto]{shafiullah2023bringing}
+Nur Muhammad~Mahi Shafiullah, Anant Rai, Haritheja Etukuru, Yiqian Liu, Ishan Misra, Soumith Chintala, and Lerrel Pinto.
+\newblock On bringing robots home.
+\newblock \emph{arXiv}, 2023.
+
+\bibitem[Shen et~al.(2023)Shen, Yang, Yu, Wong, Kaelbling, and Isola]{shen2023distilled}
+William Shen, Ge~Yang, Alan Yu, Jansen Wong, Leslie~Pack Kaelbling, and Phillip Isola.
+\newblock Distilled feature fields enable few-shot language-guided manipulation.
+\newblock \emph{arXiv preprint arXiv:2308.07931}, 2023.
+
+\bibitem[Shi et~al.(2023)Shi, Xu, Clarke, Li, and Wu]{shi2023robocook}
+Haochen Shi, Huazhe Xu, Samuel Clarke, Yunzhu Li, and Jiajun Wu.
+\newblock Robocook: Long-horizon elasto-plastic object manipulation with diverse tools.
+\newblock \emph{Proceedings of the 7th Conference on Robot Learning (CoRL)}, 2023.
+
+\bibitem[Shridhar et~al.(2023)Shridhar, Manuelli, and Fox]{shridhar2023peract}
+Mohit Shridhar, Lucas Manuelli, and Dieter Fox.
+\newblock Perceiver-actor: A multi-task transformer for robotic manipulation.
+\newblock In \emph{CoRL}, 2023.
+
+\bibitem[Simeonov et~al.(2023)Simeonov, Goyal, Manuelli, Yen-Chen, Sarmiento, Rodriguez, Agrawal, and Fox]{simeonov2023shelving}
+Anthony Simeonov, Ankit Goyal, Lucas Manuelli, Lin Yen-Chen, Alina Sarmiento, Alberto Rodriguez, Pulkit Agrawal, and Dieter Fox.
+\newblock Shelving, stacking, hanging: Relational pose diffusion for multi-modal rearrangement.
+\newblock \emph{arXiv preprint arXiv:2307.04751}, 2023.
+
+\bibitem[Song et~al.(2021{\natexlab{a}})Song, Meng, and Ermon]{song2020ddim}
+Jiaming Song, Chenlin Meng, and Stefano Ermon.
+\newblock Denoising diffusion implicit models.
+\newblock \emph{ICLR}, 2021{\natexlab{a}}.
+
+\bibitem[Song et~al.(2021{\natexlab{b}})Song, Sohl-Dickstein, Kingma, Kumar, Ermon, and Poole]{song2020score}
+Yang Song, Jascha Sohl-Dickstein, Diederik~P Kingma, Abhishek Kumar, Stefano Ermon, and Ben Poole.
+\newblock Score-based generative modeling through stochastic differential equations.
+\newblock \emph{ICLR}, 2021{\natexlab{b}}.
+
+\bibitem[Sridhar et~al.(2024)Sridhar, Dutta, Jayaraman, Weimer, and Lee]{sridhar2024memoryconsistent}
+Kaustubh Sridhar, Souradeep Dutta, Dinesh Jayaraman, James Weimer, and Insup Lee.
+\newblock Memory-consistent neural networks for imitation learning.
+\newblock In \emph{The Twelfth International Conference on Learning Representations}, 2024.
+\newblock URL \url{https://openreview.net/forum?id=R3Tf7LDdX4}.
+
+\bibitem[Todorov et~al.(2012)Todorov, Erez, and Tassa]{todorov2012mujoco}
+Emanuel Todorov, Tom Erez, and Yuval Tassa.
+\newblock Mujoco: A physics engine for model-based control.
+\newblock In \emph{IROS}, 2012.
+
+\bibitem[Urain et~al.(2023)Urain, Funk, Peters, and Chalvatzaki]{urain2023se3}
+Julen Urain, Niklas Funk, Jan Peters, and Georgia Chalvatzaki.
+\newblock Se (3)-diffusionfields: Learning smooth cost functions for joint grasp and motion optimization through diffusion.
+\newblock In \emph{2023 IEEE International Conference on Robotics and Automation (ICRA)}. IEEE, 2023.
+
+\bibitem[Wang et~al.(2022)Wang, Luo, Ross, and Li]{wang2022vrl3}
+Che Wang, Xufang Luo, Keith Ross, and Dongsheng Li.
+\newblock Vrl3: A data-driven framework for visual deep reinforcement learning.
+\newblock \emph{Advances in Neural Information Processing Systems}, 2022.
+
+\bibitem[Wang et~al.(2023{\natexlab{a}})Wang, Fan, Sun, Zhang, Fei-Fei, Xu, Zhu, and Anandkumar]{wang2023mimicplay}
+Chen Wang, Linxi Fan, Jiankai Sun, Ruohan Zhang, Li~Fei-Fei, Danfei Xu, Yuke Zhu, and Anima Anandkumar.
+\newblock Mimicplay: Long-horizon imitation learning by watching human play.
+\newblock \emph{CoRL}, 2023{\natexlab{a}}.
+
+\bibitem[Wang et~al.(2024)Wang, Shi, Wang, Zhang, Fei-Fei, and Liu]{wang2024dexcap}
+Chen Wang, Haochen Shi, Weizhuo Wang, Ruohan Zhang, Li~Fei-Fei, and C~Karen Liu.
+\newblock Dexcap: Scalable and portable mocap data collection system for dexterous manipulation.
+\newblock \emph{arXiv preprint arXiv:2403.07788}, 2024.
+
+\bibitem[Wang et~al.(2023{\natexlab{b}})Wang, Hunt, and Zhou]{wang2022diffusion_QL}
+Zhendong Wang, Jonathan~J Hunt, and Mingyuan Zhou.
+\newblock Diffusion policies as an expressive policy class for offline reinforcement learning.
+\newblock \emph{ICLR}, 2023{\natexlab{b}}.
+
+\bibitem[Wu et~al.(2023)Wu, Wu, Zhang, Gan, and Dong]{wu2023graspGF}
+Tianhao Wu, Mingdong Wu, Jiyao Zhang, Yunchong Gan, and Hao Dong.
+\newblock Learning score-based grasping primitive for human-assisting dexterous grasping.
+\newblock In \emph{NeurIPS}, 2023.
+
+\bibitem[Xian et~al.(2023)Xian, Gkanatsios, Gervet, Ke, and Fragkiadaki]{xian2023chaineddiffuser}
+Zhou Xian, Nikolaos Gkanatsios, Theophile Gervet, Tsung-Wei Ke, and Katerina Fragkiadaki.
+\newblock Chaineddiffuser: Unifying trajectory diffusion and keypose prediction for robotic manipulation.
+\newblock In \emph{CoRL}, 2023.
+
+\bibitem[Xiang et~al.(2020)Xiang, Qin, Mo, Xia, Zhu, Liu, Liu, Jiang, Yuan, Wang, et~al.]{xiang2020sapien}
+Fanbo Xiang, Yuzhe Qin, Kaichun Mo, Yikuan Xia, Hao Zhu, Fangchen Liu, Minghua Liu, Hanxiao Jiang, Yifu Yuan, He~Wang, et~al.
+\newblock Sapien: A simulated part-based interactive environment.
+\newblock In \emph{CVPR}, 2020.
+
+\bibitem[Yan et~al.(2024)Yan, Wu, and Wang]{yan2024nerfuser}
+Ge~Yan, Yueh-Hua Wu, and Xiaolong Wang.
+\newblock Ne{RF}user: Diffusion guided multi-task 3d policy learning, 2024.
+\newblock URL \url{https://openreview.net/forum?id=8GmPLkO0oR}.
+
+\bibitem[Yang et~al.(2023)Yang, Ze, and Xu]{yang2023movie}
+Sizhe Yang, Yanjie Ze, and Huazhe Xu.
+\newblock Movie: Visual model-based policy adaptation for view generalization.
+\newblock \emph{Annual Conference on Neural Information Processing Systems (NeurIPS)}, 2023.
+
+\bibitem[Yin et~al.(2023)Yin, Huang, Qin, Chen, and Wang]{yin2023rotating}
+Zhao-Heng Yin, Binghao Huang, Yuzhe Qin, Qifeng Chen, and Xiaolong Wang.
+\newblock Rotating without seeing: Towards in-hand dexterity through touch.
+\newblock \emph{RSS}, 2023.
+
+\bibitem[Yu et~al.(2020)Yu, Quillen, He, Julian, Hausman, Finn, and Levine]{yu2020metaworld}
+Tianhe Yu, Deirdre Quillen, Zhanpeng He, Ryan Julian, Karol Hausman, Chelsea Finn, and Sergey Levine.
+\newblock Meta-world: A benchmark and evaluation for multi-task and meta reinforcement learning.
+\newblock In \emph{CoRL}, 2020.
+
+\bibitem[Yuan et~al.(2023)Yuan, Che, Qin, Huang, Yin, Lee, Wu, Lim, and Wang]{yuan2023robot_synthethesia}
+Ying Yuan, Haichuan Che, Yuzhe Qin, Binghao Huang, Zhao-Heng Yin, Kang-Won Lee, Yi~Wu, Soo-Chul Lim, and Xiaolong Wang.
+\newblock Robot synesthesia: In-hand manipulation with visuotactile sensing.
+\newblock \emph{arXiv}, 2023.
+
+\bibitem[Yuan et~al.(2022)Yuan, Xue, Yuan, Wang, Wu, Gao, and Xu]{yuan2022pieg}
+Zhecheng Yuan, Zhengrong Xue, Bo~Yuan, Xueqian Wang, Yi~Wu, Yang Gao, and Huazhe Xu.
+\newblock Pre-trained image encoder for generalizable visual reinforcement learning.
+\newblock \emph{Advances in Neural Information Processing Systems}, 2022.
+
+\bibitem[Ze et~al.(2023{\natexlab{a}})Ze, Hansen, Chen, Jain, and Wang]{Ze2022rl3d}
+Yanjie Ze, Nicklas Hansen, Yinbo Chen, Mohit Jain, and Xiaolong Wang.
+\newblock Visual reinforcement learning with self-supervised 3d representations.
+\newblock \emph{IEEE Robotics and Automation Letters}, 2023{\natexlab{a}}.
+
+\bibitem[Ze et~al.(2023{\natexlab{b}})Ze, Liu, Shi, Qin, Yuan, Wang, and Xu]{ze2023hindex}
+Yanjie Ze, Yuyao Liu, Ruizhe Shi, Jiaxin Qin, Zhecheng Yuan, Jiashun Wang, and Huazhe Xu.
+\newblock H-index: Visual reinforcement learning with hand-informed representations for dexterous manipulation.
+\newblock In \emph{Annual Conference on Neural Information Processing Systems (NeurIPS)}, 2023{\natexlab{b}}.
+
+\bibitem[Ze et~al.(2023{\natexlab{c}})Ze, Yan, Wu, Macaluso, Ge, Ye, Hansen, Li, and Wang]{ze2023gnfactor}
+Yanjie Ze, Ge~Yan, Yueh-Hua Wu, Annabella Macaluso, Yuying Ge, Jianglong Ye, Nicklas Hansen, Li~Erran Li, and Xiaolong Wang.
+\newblock Gnfactor: Multi-task real robot learning with generalizable neural feature fields.
+\newblock \emph{Proceedings of the 7th Conference on Robot Learning (CoRL)}, 2023{\natexlab{c}}.
+
+\bibitem[Zhang et~al.(2023)Zhang, Fang, Fang, and Lu]{zhang2023flexible_handover}
+Gu~Zhang, Hao-Shu Fang, Hongjie Fang, and Cewu Lu.
+\newblock Flexible handover with real-time robust dynamic grasp trajectory generation.
+\newblock In \emph{2023 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)}, 2023.
+
+\bibitem[Zhao et~al.(2021)Zhao, Jiang, Jia, Torr, and Koltun]{zhao2021point_transformer}
+Hengshuang Zhao, Li~Jiang, Jiaya Jia, Philip~HS Torr, and Vladlen Koltun.
+\newblock Point transformer.
+\newblock In \emph{ICCV}, 2021.
+
+\bibitem[Zhu et~al.(2020)Zhu, Wong, Mandlekar, Mart{\'\i}n-Mart{\'\i}n, Joshi, Nasiriany, and Zhu]{zhu2020robosuite}
+Yuke Zhu, Josiah Wong, Ajay Mandlekar, Roberto Mart{\'\i}n-Mart{\'\i}n, Abhishek Joshi, Soroush Nasiriany, and Yifeng Zhu.
+\newblock robosuite: A modular simulation framework and benchmark for robot learning.
+\newblock \emph{arXiv preprint arXiv:2009.12293}, 2020.
+
+\end{thebibliography}

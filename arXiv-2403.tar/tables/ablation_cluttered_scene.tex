@@ -1,0 +1,52 @@
+\begin{table}[htbp]
+\centering
+\vspace{-0.1in}
+\caption{\revise{\textbf{Results in cluttered scenes.} Each algorithm is evaluated with 10 trials in the training color. Each out-of-domain color and object are evaluated with one trial.}}
+\label{table: ablation cluttered scenes}
+\vspace{-0.05in}
+\includegraphics[width=0.48\textwidth]{figures/cluttered.pdf}
+
+\resizebox{0.49\textwidth}{!}{%
+\begin{tabular}{l|ccccccccc}
+\toprule
+
+
+  Cluttered Scenes  & Diffusion Policy & DP3 w/ PointNeXt  & DP3 w/ color & DP3 \\
+\midrule
+
+  Success Rate &  \cc{60} & \cc{0} & \ccbf{80}   & \ccbf{80}\\
+
+
+
+\midrule
+\end{tabular}}
+
+
+\resizebox{0.49\textwidth}{!}{%
+\begin{tabular}{l|ccc|cccccc}
+\midrule
+
+
+  Train with \textcolor{yellow}{$\blacksquare$} Cube & \textcolor{red}{$\blacksquare$} & \textcolor{blue}{$\blacksquare$} & \textcolor{ggreen}{$\blacksquare$} & Charger & Cylinder & Rope \\
+\midrule
+ DP3 w/ color & \textcolor{gred}{\XSolidBrush} &
+\textcolor{gred}{\XSolidBrush} &
+\textcolor{gred}{\XSolidBrush} &\textcolor{gred}{\XSolidBrush} &
+\textcolor{gred}{\XSolidBrush} &
+\textcolor{gred}{\XSolidBrush} \\
+DP3  &  \textcolor{ggreen}{\Checkmark} & \textcolor{ggreen}{\Checkmark} & \textcolor{ggreen}{\Checkmark} &  \textcolor{ggreen}{\Checkmark} & \textcolor{ggreen}{\Checkmark} & \textcolor{ggreen}{\Checkmark} \\
+
+
+
+
+\bottomrule
+\end{tabular}}
+
+
+
+
+\end{table}
+
+
+
+

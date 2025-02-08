@@ -1,0 +1,31 @@
+\begin{table}[htbp]
+\centering
+\vspace{-0.1in}
+\caption{\textbf{Ablations on image resolutions for Diffusion Policy.} Originally we use $84\times84$ for both \ours and Diffusion  Policy. We further test with resolutions $128\times128$ and $256\times256$ for Diffusion Policy. }
+\label{table: image resolution}
+\vspace{-0.08in}
+\resizebox{0.65\textwidth}{!}{%
+\begin{tabular}{l|cccccc|ccc}
+\toprule
+
+% & \multicolumn{3}{c}{\textbf{Adroit}} & \multicolumn{3}{c}{\textbf{MetaWorld}} \\
+ % Algorithm & Hammer & Door  & Pen & Assembly & Basketball & Shelf Place & \textbf{Average} \\
+
+  Algorithm & H & D  & P & A & B & S & \textbf{Average} \\
+
+
+\midrule
+
+\ours & \dd{100}{0} & \dd{62}{4} & \dd{43}{6} & \dd{49}{5} & \dd{91}{7} & \dd{34}{3} & $63.2$\\
+
+Diffusion Policy ($84\times84$) & \dd{48}{17} & \dd{50}{5} & \dd{25}{4} &\dd{0}{0} & \dd{30}{8} & \dd{19}{15} & $28.7$\\
+
+Diffusion Policy ($128\times128$) & \dd{26}{7} &\dd{34}{1} &\dd{15}{1} & \dd{26}{5} & \dd{76}{5} & \dd{4}{2} & $30.2$\\
+
+Diffusion Policy ($256\times256$) & \dd{28}{6} &\dd{31}{7} & \dd{15}{1} & \dd{21}{3} & \dd{78}{2} & \dd{4}{2} & $29.5$\\
+
+
+\bottomrule
+\end{tabular}}
+\end{table}
+

@@ -1,0 +1,30 @@
+\begin{table}[htbp]
+\centering
+\vspace{-0.1in}
+\caption{\textbf{Ablation on prediction horizon.} In this work, \ours and Diffusion Policy uses a prediction horizon $H=4, N_{act}=3$. We test $H=16, N_{act}=8$ originally used in \citep{chi2023diffusion_policy} for both methods.}
+\label{table:prediction horizon}
+\vspace{-0.05in}
+\resizebox{0.65\textwidth}{!}{
+\begin{tabular}{l|cccccc|ccc}
+\toprule
+
+  Algorithm & H & D  & P & A & DA & SP & \textbf{Average} \\
+
+\midrule
+
+
+\ours & \dd{100}{0} & \dd{62}{4} & \dd{43}{6} & \dd{99}{1} & \dd{69}{4} & \dd{97}{4} & $78.3$\\
+
+w/ long horizon & \dd{100}{0} & \dd{64}{5} & \dd{46}{3} & \dd{99}{1} & \dd{75}{3} & \dd{85}{14} & $78.2$ \\
+ 
+ \midrule
+ 
+Diffusion Policy &	\dd{48}{17} & \dd{50}{5} & \dd{25}{4}	& \dd{15}{1} & \dd{43}{7} & 	\dd{63}{3} & $40.7$\\
+
+w/ long horizon & \dd{68}{11} & \dd{44}{4} & \dd{16}{2} & \dd{12}{3} & \dd{14}{1} & \dd{44}{5} & $33.0$ \\
+
+
+\bottomrule
+\end{tabular}}
+\end{table}
+

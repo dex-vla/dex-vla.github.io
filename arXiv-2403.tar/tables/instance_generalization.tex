@@ -1,0 +1,26 @@
+\begin{table}[htbp]
+\centering
+\vspace{-0.05in}
+\caption{\textbf{Instance generalization on Drill.} We replace the cube used in Drill with five objects in varied sizes from our daily life. Each instance is evaluated with one trial.}
+\vspace{-0.05in}
+\label{table: instance gen}
+\includegraphics[width=0.49\textwidth]{figures/instance.pdf}
+\resizebox{0.49\textwidth}{!}{%
+
+\begin{tabular}{l|ccccccccc}
+\toprule
+
+
+Instance Generalization & Mouse & Espeon   & Cup    & Mug & Hand  \\
+
+% \includegraphics[width=0.15\linewidth]{figures/appear_gen/green.jpg}&\includegraphics[width=0.15\linewidth]{figures/instance_gen/cat.jpg}&\includegraphics[width=0.15\linewidth]{figures/instance_gen/mouse.jpg}&\includegraphics[width=0.15\linewidth]{figures/instance_gen/latte.jpg}&\includegraphics[width=0.15\linewidth]{figures/instance_gen/cup.jpg}&\includegraphics[width=0.15\linewidth]{figures/instance_gen/hand.jpg}\\
+
+
+\midrule
+  Diffusion Policy & \textcolor{gred}{\XSolidBrush} & \textcolor{gred}{\XSolidBrush} & \textcolor{gred}{\XSolidBrush} & \textcolor{gred}{\XSolidBrush} & \textcolor{ggreen}{\Checkmark} \\
+  Diffusion Policy (Depth) & \textcolor{gred}{\XSolidBrush} & \textcolor{gred}{\XSolidBrush} & \textcolor{ggreen}{\Checkmark} & \textcolor{gred}{\XSolidBrush} & \textcolor{gred}{\XSolidBrush} \\
+  \textbf{\ours}  & \textcolor{ggreen}{\Checkmark} & \textcolor{ggreen}{\Checkmark} & \textcolor{ggreen}{\Checkmark} & \textcolor{ggreen}{\Checkmark} & \textcolor{ggreen}{\Checkmark} \\
+\bottomrule
+\end{tabular}}
+% \vspace{-0.1in}
+\end{table}
